@@ -2544,7 +2544,8 @@
 
         const data = await res.json();
 
-        if (data && data.status === 'success' && data.user) {
+        
+   if (data && data.status === 'success' && data.user) {
           const userData = {
             id: data.user.id,
             name: data.user.nombre,
@@ -2553,6 +2554,17 @@
             sellos: typeof data.user.sellos === 'number' ? data.user.sellos : 0
           };
           saveUserSession(userData);
+
+          // LISTA DE CORREOS DE ADMINISTRADORES
+          const adminEmails = [
+            "munozdanny2005@gmail.com",    // Pon aquí tu correo real
+            "pablojimbo98@icloud.com"        // Pon aquí el correo de tu socio
+          ];
+
+          if (adminEmails.map(e => e.toLowerCase()).includes(userData.email.toLowerCase())) {
+            window.location.href = "admin.html";
+            return;
+          }
           renderLoyaltyStamps(userData.sellos);
           closeAuthModal();
         } else {
