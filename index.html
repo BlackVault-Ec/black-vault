@@ -434,16 +434,71 @@
           <span class="material-symbols-outlined text-4xl font-bold">check</span>
         </div>
         <h2 class="font-cinzel text-xl sm:text-2xl uppercase tracking-wider text-vault-textIvory font-bold mb-2">
-          Tu cuenta ha sido creada exitosamente
+          ¡Tu cuenta está activa!
         </h2>
+        <p class="text-sm text-vault-goldLight font-medium max-w-xs mb-2">
+          Eres parte de la familia Black Vault.
+        </p>
         <p class="text-xs text-vault-textMuted max-w-xs mb-6" id="authSuccessMsg">
           Tu membresía Black Club ha sido activada con éxito.
         </p>
-        <button onclick="closeAuthModal(); switchTab('black-club');" class="py-2.5 px-6 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black font-montserrat text-xs uppercase tracking-widest font-extrabold hover:brightness-110 shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all cursor-pointer">
-          Ver Mi Pasaporte VIP
+        <button type="button" onclick="cerrarMensajeExitoFinal()" class="py-2.5 px-8 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black font-montserrat text-xs uppercase tracking-widest font-extrabold hover:brightness-110 shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all cursor-pointer">
+          Cerrar
         </button>
       </div>
 
+      <!-- VIEW D: VERIFICACIÓN OBLIGATORIA DE CÓDIGO POR CORREO -->
+      <div id="authOtpView" class="hidden flex flex-col text-center">
+        <div class="inline-flex items-center justify-center gap-2 px-3 py-1 bg-vault-elevated border border-vault-gold/30 mb-3 mx-auto">
+          <span class="material-symbols-outlined text-vault-gold text-[16px]">mark_email_read</span>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-vault-gold font-bold">Seguridad VIP</span>
+        </div>
+        <h2 class="font-cinzel text-xl sm:text-2xl uppercase tracking-wider text-vault-textIvory font-bold mb-1">
+          Verifica tu Cuenta
+        </h2>
+        <p class="text-xs text-vault-textMuted mb-3">
+          Ingresa el código de 6 dígitos enviado a:<br>
+          <strong id="otpEmailTarget" class="text-vault-gold font-mono">correo@ejemplo.com</strong>
+        </p>
+
+        <!-- Mensaje de aviso sobre Spam -->
+        <div class="mb-4 p-3 bg-vault-surface border-l-2 border-vault-gold text-left text-[11px] text-vault-textMuted leading-relaxed">
+          <strong class="text-vault-goldLight block mb-0.5">⚠️ Revisa tu carpeta de Spam o Correo no deseado:</strong>
+          Al ser un código de alta confidencialidad, el filtro de tu correo puede moverlo a Spam.
+        </div>
+
+        <!-- Banner de Error OTP -->
+        <div id="otpError" class="hidden mb-3 p-2 bg-red-950/70 border border-red-500/60 text-red-200 text-xs flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[15px] text-red-400">error</span>
+          <span id="otpErrorText">Código no válido</span>
+        </div>
+
+        <input type="text" id="otpCodeInput" maxlength="6" inputmode="numeric" placeholder="000000" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6);" class="w-full text-center text-2xl font-mono tracking-[0.5em] bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-gold py-2.5 outline-none mb-2">
+
+        <div class="text-[11px] text-vault-textMuted mb-4">
+          Tiempo de validez: <span id="otpCountdown" class="text-vault-gold font-mono font-bold">15:00</span>
+        </div>
+
+        <button type="button" id="otpConfirmBtn" onclick="submitOtpVerification()" class="w-full py-3 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black font-montserrat text-xs uppercase tracking-widest font-extrabold hover:brightness-110 shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all cursor-pointer mb-3">
+          Validar y Activar Membresía
+        </button>
+
+        <div class="text-xs text-vault-textMuted">
+          ¿No recibiste el correo? 
+          <button type="button" id="otpResendBtn" onclick="resendOtpCode()" disabled class="text-vault-gold font-bold ml-1 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed">
+            Reenviar código (<span id="otpResendSecs">60</span>s)
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OVERLAY CON SPINNER PARA CERRAR SESIÓN SUAVEMENTE -->
+  <div id="logoutOverlay" class="fixed inset-0 z-[120] hidden items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300">
+    <div class="flex flex-col items-center justify-center text-center p-6">
+      <div class="w-12 h-12 rounded-full border-2 border-vault-gold/20 border-t-vault-gold animate-spin mb-4"></div>
+      <span class="font-cinzel text-sm uppercase tracking-[0.25em] text-vault-gold font-bold">Cerrando sesión segura...</span>
     </div>
   </div>
 
@@ -2135,11 +2190,43 @@
     }
 
     function closeAuthModal() {
+     function closeAuthModal() {
       if (authModal) {
         authModal.classList.add('hidden');
         authModal.classList.remove('flex');
       }
-      // Si hay producto pendiente y el usuario se acaba de loguear, abrirlo
+
+      // 1. Reset de formularios
+      const lForm = document.getElementById('loginForm');
+      if (lForm) lForm.reset();
+      const sForm = document.getElementById('signupForm');
+      if (sForm) sForm.reset();
+
+      // 2. Restaurar botón de Registro para que no se quede en "CREANDO MEMBRESÍA VIP..."
+      const signupBtn = document.getElementById('signupSubmitBtn');
+      if (signupBtn) {
+        signupBtn.disabled = true;
+        signupBtn.classList.add('opacity-40', 'cursor-not-allowed');
+        signupBtn.innerHTML = 'Crear Cuenta VIP';
+      }
+
+      // 3. Restaurar botón de Login
+      const loginBtn = document.getElementById('loginSubmitBtn');
+      if (loginBtn) {
+        loginBtn.disabled = false;
+        loginBtn.innerHTML = 'Ingresar';
+      }
+
+      // 4. Limpiar mensajes de error y medidor de contraseña
+      const loginErr = document.getElementById('loginError');
+      const signupErr = document.getElementById('signupError');
+      const otpErr = document.getElementById('otpError');
+      if (loginErr) loginErr.classList.add('hidden');
+      if (signupErr) signupErr.classList.add('hidden');
+      if (otpErr) otpErr.classList.add('hidden');
+      evaluatePasswordStrength();
+
+      // Si hay producto pendiente tras autenticarse
       const user = getCurrentUser();
       if (user && user.name && window._pendingOrderProduct) {
         const pid = window._pendingOrderProduct;
@@ -2147,7 +2234,6 @@
         setTimeout(() => openDynamicOrderModal(pid), 200);
       }
     }
-
     // ==========================================
     // MODAL DE CONDICIONES DE ENTREGAS
     // ==========================================
@@ -2671,43 +2757,20 @@
         });
 
         const data = await res.json();
-
-        if (data && data.status === 'success') {
-          const userData = {
+if (data && data.status === 'success') {
+          // Guardar temporalmente los datos del usuario en memoria
+          window._pendingUserData = {
             id: data.user ? data.user.id : undefined,
             name: (data.user && data.user.nombre) ? data.user.nombre : name,
             city: (data.user && data.user.ciudad) ? data.user.ciudad : city,
             email: (data.user && data.user.correo) ? data.user.correo : email,
             phone: phone,
             birthdate: birthdate,
-            sellos: (data.user && typeof data.user.sellos === 'number') ? data.user.sellos : 0
+            sellos: 0
           };
 
-          saveUserSession(userData);
-          renderLoyaltyStamps(userData.sellos);
-
-          // Feedback limpio dentro del contenedor del modal
-          if (authLoginView) authLoginView.classList.add('hidden');
-          if (authSignupView) authSignupView.classList.add('hidden');
-
-          const successView = document.getElementById('authSuccessView');
-          const successMsg = document.getElementById('authSuccessMsg');
-          if (successMsg) {
-            successMsg.textContent = `Bienvenido al Black Club, ${userData.name}. Tu pase de fidelidad digital ha sido activado con 0 sellos para ${userData.city}.`;
-          }
-          if (successView) {
-            successView.classList.remove('hidden');
-            successView.classList.add('flex');
-          }
-
-          setTimeout(function() {
-            if (authModal && !authModal.classList.contains('hidden') && successView && !successView.classList.contains('hidden')) {
-              const hasPending = !!window._pendingOrderProduct;
-              closeAuthModal();
-              if (!hasPending) switchTab('black-club');
-            }
-          }, 2500);
-
+          // Abrir la pantalla de validación del código recibido por correo
+          mostrarVistaOtp(email);
         } else {
           showSignupError((data && data.message) ? data.message : 'Error al registrar la membresía. Intenta nuevamente.');
           if (submitBtn) {
@@ -2758,14 +2821,205 @@
       openAuthModal('login');
     }
 
+// Cierre de sesión con spinner elegante
     function logoutUser() {
       const menu = document.getElementById('userDropdownMenu');
       if (menu) menu.classList.add('hidden');
+
+      const overlay = document.getElementById('logoutOverlay');
+      if (overlay) {
+        overlay.classList.remove('hidden');
+        overlay.classList.add('flex');
+      }
+
+      setTimeout(() => {
+        try {
+          localStorage.removeItem('blackVaultUser');
+        } catch (e) {}
+        updateAuthUI();
+        renderLoyaltyStamps(0);
+        window.location.reload();
+      }, 900);
+    }
+
+    // ==========================================
+    // LÓGICA DE VERIFICACIÓN DE CÓDIGO OTP POR CORREO
+    // ==========================================
+    let otpTimerInterval = null;
+    let otpResendInterval = null;
+    let otpSecondsLeft = 900; // 15 minutos de validez
+    let otpCurrentEmail = '';
+
+    function mostrarVistaOtp(email) {
+      otpCurrentEmail = email;
+      const emailEl = document.getElementById('otpEmailTarget');
+      if (emailEl) emailEl.textContent = email;
+
+      if (authLoginView) authLoginView.classList.add('hidden');
+      if (authSignupView) authSignupView.classList.add('hidden');
+      const otpView = document.getElementById('authOtpView');
+      if (otpView) {
+        otpView.classList.remove('hidden');
+        otpView.classList.add('flex');
+      }
+
+      // Iniciar cuenta regresiva de 15 minutos
+      otpSecondsLeft = 900;
+      clearInterval(otpTimerInterval);
+      const countdownEl = document.getElementById('otpCountdown');
+
+      otpTimerInterval = setInterval(() => {
+        otpSecondsLeft--;
+        const m = Math.floor(otpSecondsLeft / 60).toString().padStart(2, '0');
+        const s = (otpSecondsLeft % 60).toString().padStart(2, '0');
+        if (countdownEl) countdownEl.textContent = `${m}:${s}`;
+
+        if (otpSecondsLeft <= 0) {
+          clearInterval(otpTimerInterval);
+          const btn = document.getElementById('otpConfirmBtn');
+          if (btn) btn.disabled = true;
+          alert('El código ha caducado. Por favor solicita uno nuevo con el botón Reenviar.');
+        }
+      }, 1000);
+
+      iniciarContadorReenvio();
+    }
+
+    function iniciarContadorReenvio() {
+      const btn = document.getElementById('otpResendBtn');
+      const spanSecs = document.getElementById('otpResendSecs');
+      if (!btn) return;
+
+      btn.disabled = true;
+      let secs = 60;
+      if (spanSecs) spanSecs.textContent = secs;
+
+      clearInterval(otpResendInterval);
+      otpResendInterval = setInterval(() => {
+        secs--;
+        if (spanSecs) spanSecs.textContent = secs;
+        if (secs <= 0) {
+          clearInterval(otpResendInterval);
+          btn.disabled = false;
+          btn.textContent = 'Reenviar código ahora';
+        }
+      }, 1000);
+    }
+
+    async function submitOtpVerification() {
+      const codeInput = document.getElementById('otpCodeInput');
+      const code = codeInput ? codeInput.value.trim() : '';
+      const errBox = document.getElementById('otpError');
+      const errText = document.getElementById('otpErrorText');
+      const btn = document.getElementById('otpConfirmBtn');
+
+      if (code.length !== 6) {
+        if (errBox && errText) {
+          errText.textContent = 'Ingresa el código completo de 6 dígitos.';
+          errBox.classList.remove('hidden');
+        }
+        return;
+      }
+
+      if (errBox) errBox.classList.add('hidden');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'VERIFICANDO CÓDIGO...';
+      }
+
       try {
-        localStorage.removeItem('blackVaultUser');
-      } catch (e) {}
-      updateAuthUI();
-      renderLoyaltyStamps(0);
+        const res = await fetch(API_APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            action: 'verify_otp',
+            correo: otpCurrentEmail,
+            codigo: code
+          })
+        });
+
+        const data = await res.json();
+        if (data && data.status === 'success') {
+          clearInterval(otpTimerInterval);
+
+          // 1. Guardar la sesión oficial en localStorage
+          if (window._pendingUserData) {
+            saveUserSession(window._pendingUserData);
+            renderLoyaltyStamps(0);
+          }
+
+          // 2. Ocultar la pantalla de código
+          const otpView = document.getElementById('authOtpView');
+          if (otpView) {
+            otpView.classList.add('hidden');
+            otpView.classList.remove('flex');
+          }
+
+          // 3. Mostrar la pantalla de bienvenida con el mensaje personalizado que pediste
+          const successView = document.getElementById('authSuccessView');
+          const successMsg = document.getElementById('authSuccessMsg');
+          if (successMsg && window._pendingUserData) {
+            successMsg.textContent = `Tu cuenta está activa, eres parte de la familia Black Vault. Bienvenido, ${window._pendingUserData.name}.`;
+          }
+          if (successView) {
+            successView.classList.remove('hidden');
+            successView.classList.add('flex');
+          }
+
+        } else {
+          if (errBox && errText) {
+            errText.textContent = (data && data.message) ? data.message : 'Código incorrecto o expirado.';
+            errBox.classList.remove('hidden');
+          }
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = 'Validar y Activar Membresía';
+          }
+        }
+      } catch (e) {
+        if (errBox && errText) {
+          errText.textContent = 'Error al conectar con el servidor.';
+          errBox.classList.remove('hidden');
+        }
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = 'Validar y Activar Membresía';
+        }
+      }
+    }
+
+    async function resendOtpCode() {
+      const btn = document.getElementById('otpResendBtn');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+      }
+
+      try {
+        const res = await fetch(API_APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            action: 'resend_otp',
+            correo: otpCurrentEmail
+          })
+        });
+
+        const data = await res.json();
+        if (data && data.status === 'success') {
+          alert('Nuevo código enviado. Por favor revisa tu bandeja de entrada o Spam.');
+          otpSecondsLeft = 900;
+          const confirmBtn = document.getElementById('otpConfirmBtn');
+          if (confirmBtn) confirmBtn.disabled = false;
+          iniciarContadorReenvio();
+        } else {
+          alert((data && data.message) ? data.message : 'No se pudo reenviar el código.');
+          if (btn) btn.disabled = false;
+        }
+      } catch (e) {
+        alert('Error de conexión al reenviar el código.');
+        if (btn) btn.disabled = false;
+      }
     }
 
     // ==========================================
