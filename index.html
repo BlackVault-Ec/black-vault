@@ -2189,8 +2189,7 @@
       }
     }
 
-    function closeAuthModal() {
-     function closeAuthModal() {
+   function closeAuthModal() {
       if (authModal) {
         authModal.classList.add('hidden');
         authModal.classList.remove('flex');
@@ -2233,6 +2232,12 @@
         window._pendingOrderProduct = null;
         setTimeout(() => openDynamicOrderModal(pid), 200);
       }
+    }
+
+    // Cierra el mensaje de bienvenida y te lleva al Black Club
+    function cerrarMensajeExitoFinal() {
+      closeAuthModal();
+      switchTab('black-club');
     }
     // ==========================================
     // MODAL DE CONDICIONES DE ENTREGAS
