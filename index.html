@@ -1,0 +1,3310 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Vault | Prestige Vapes • Cuenca, Ecuador</title>
+  <meta name="description" content="Black Vault - Reserva exclusiva de vaporizadores desechables de alta gama y perfiles sensoriales superiores en Cuenca, Ecuador. Entrega confidencial y garantía de fábrica.">
+  
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            vault: {
+              black: "#0A0A0A",
+              canvas: "#000000",
+              surface: "#121212",
+              elevated: "#181818",
+              card: "#141414",
+              border: "rgba(212, 175, 55, 0.25)",
+              borderHover: "rgba(212, 175, 55, 0.7)",
+              gold: "#D4AF37",
+              goldLight: "#F2CA50",
+              goldBronze: "#C5A059",
+              textMuted: "#A0A0A0",
+              textIvory: "#F4F1EA",
+              cyan: "#00E5FF"
+            }
+          },
+          fontFamily: {
+            cinzel: ["Cinzel", "serif"],
+            playfair: ["Playfair Display", "serif"],
+            montserrat: ["Montserrat", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom scrollbar and subtle glowing highlights */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0A0A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2A2415;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4AF37;
+    }
+    .gold-glow {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+    }
+    .gold-glow-lg {
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.15);
+    }
+    .gold-border-ornate {
+      position: relative;
+    }
+    .gold-border-ornate::before,
+    .gold-border-ornate::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      pointer-events: none;
+    }
+    .gold-border-ornate::before {
+      top: -2px;
+      left: -2px;
+      border-top: 2px solid #D4AF37;
+      border-left: 2px solid #D4AF37;
+    }
+    .gold-border-ornate::after {
+      bottom: -2px;
+      right: -2px;
+      border-bottom: 2px solid #D4AF37;
+      border-right: 2px solid #D4AF37;
+    }
+    /* Logo metallic gold styling for contrast over dark canvas */
+    /* Silhouette shadow for transparent PNG vapes */
+    .vape-silhouette-shadow {
+      filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.85)) drop-shadow(0 2px 8px rgba(212, 175, 55, 0.2));
+    }
+    .gold-logo-glow {
+      filter: brightness(0) saturate(100%) invert(75%) sepia(60%) saturate(450%) hue-rotate(6deg) brightness(98%) contrast(90%) drop-shadow(0 0 6px rgba(212, 175, 55, 0.45));
+    }
+  </style>
+</head>
+<body class="bg-vault-black font-montserrat text-vault-textIvory antialiased selection:bg-vault-gold selection:text-vault-black min-h-screen relative overflow-x-hidden">
+
+  <!-- Background Ambient Radial Glow -->
+  <div class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.08),transparent_50%)]"></div>
+
+  <!-- ========================================== -->
+  <!-- MODAL DE VERIFICACIÓN DE EDAD (+18 AÑOS) -->
+  <!-- ========================================== -->
+  <div id="ageVerificationModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 transition-opacity duration-500 opacity-100">
+    <div class="relative w-full max-w-lg bg-vault-surface border border-vault-gold/60 p-6 sm:p-10 gold-glow-lg flex flex-col items-center text-center">
+      <!-- Ornate corners -->
+      <div class="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-vault-gold"></div>
+      <div class="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-vault-gold"></div>
+      <div class="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-vault-gold"></div>
+      <div class="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-vault-gold"></div>
+
+      <!-- Vault Brand Badge / Logo with Gold Radiance -->
+      <div class="w-20 h-20 mb-4 flex items-center justify-center relative">
+        <img src="LOGO.png" alt="Black Vault Logo" class="w-full h-full object-contain gold-logo-glow">
+      </div>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1 bg-vault-elevated border border-vault-gold/40 mb-3">
+        <span class="w-2 h-2 rounded-full bg-vault-gold animate-pulse"></span>
+        <span class="text-[11px] uppercase tracking-[0.25em] text-vault-gold font-bold">Acceso Privado • Cuenca</span>
+      </div>
+
+      <h2 class="font-cinzel text-2xl sm:text-3xl uppercase tracking-widest text-vault-textIvory mb-2 font-bold">
+        Acceso Exclusivo +18
+      </h2>
+
+      <p class="text-sm text-vault-textMuted mb-6 leading-relaxed max-w-sm">
+        Debes ser mayor de edad para explorar nuestro catálogo y servicios de vaporizadores desechables de alta gama en Cuenca, Ecuador.
+      </p>
+
+      <!-- Botones de Acción de Verificación de Edad -->
+      <div id="ageActionButtons" class="flex flex-col sm:flex-row items-center gap-3 w-full mb-4">
+        <button id="verifyAgeBtn" class="w-full py-3.5 px-6 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black font-montserrat text-xs uppercase tracking-widest font-extrabold hover:brightness-110 shadow-[0_0_20px_rgba(212,175,55,0.35)] transition-all cursor-pointer">
+          Soy Mayor de 18 Años
+        </button>
+        <button id="exitAgeBtn" class="w-full sm:w-auto py-3.5 px-6 bg-[#161616] hover:bg-[#222222] text-vault-textMuted hover:text-vault-textIvory border border-vault-border text-xs uppercase tracking-wider transition-colors cursor-pointer">
+          Salir
+        </button>
+      </div>
+
+      <!-- Mensaje Sobrio y Elegante de Acceso Restringido (+18) -->
+      <div id="ageRestrictedNotice" class="hidden w-full p-4 mb-4 bg-vault-surface border border-vault-gold/40 text-center shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+        <div class="inline-flex items-center justify-center gap-1.5 text-vault-gold mb-2">
+          <span class="material-symbols-outlined text-sm">lock</span>
+          <span class="text-[11px] uppercase tracking-widest font-bold">Acceso Restringido</span>
+        </div>
+        <p class="text-xs text-vault-textMuted leading-relaxed">
+          Acceso restringido: Por políticas de seguridad y normativa legal vigente, el acceso a Black Vault está reservado estrictamente para mayores de 18 años. Si fue un error, recarga la página para verificar tu acceso.
+        </p>
+      </div>
+
+      <p class="text-[10px] text-vault-textMuted/70 leading-normal max-w-xs">
+        El acceso está estrictamente regulado según la normativa ecuatoriana vigente. Discreción y confidencialidad asegurada.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL DE CONDICIONES DE ENTREGAS Y ENVÍOS (INFORMACIÓN TEXTUAL LIMPIA) -->
+  <!-- ========================================== -->
+  <div id="deliveryConditionsModal" class="fixed inset-0 z-[95] hidden items-center justify-center bg-black/90 backdrop-blur-md p-4 transition-all duration-300">
+    <div class="relative w-full max-w-xl bg-[#0F0F0F] border border-vault-gold/60 p-4 sm:p-6 gold-glow-lg gold-border-ornate max-h-[92vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button onclick="closeDeliveryConditionsModal()" class="absolute top-4 right-4 text-vault-textMuted hover:text-vault-gold p-1 transition-colors cursor-pointer" aria-label="Cerrar modal">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-vault-elevated border border-vault-gold/40 mb-2">
+          <span class="material-symbols-outlined text-vault-gold text-[15px]">local_shipping</span>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-vault-gold font-bold">Protocolo de Despacho Black Vault</span>
+        </div>
+        <h2 class="font-cinzel text-xl sm:text-2xl uppercase tracking-wider text-vault-textIvory font-bold">
+          Condiciones de Envíos & Entregas
+        </h2>
+        <p class="text-xs text-vault-textMuted mt-1">Transparencia absoluta en nuestras entregas en Cuenca y despachos a todo el Ecuador.</p>
+      </div>
+
+      <!-- Políticas Principales: Cuenca & Nacional (Texto Limpio) -->
+      <div class="flex flex-col gap-4 mb-6">
+        <!-- Tarjeta Cuenca Local -->
+        <div class="bg-vault-surface border border-vault-gold/40 p-5 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-20 h-20 bg-vault-gold/5 rounded-bl-full pointer-events-none"></div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-vault-gold text-2xl">location_city</span>
+            <h3 class="font-cinzel text-base uppercase tracking-wider text-vault-textIvory font-bold">Cuenca (Despacho Local)</h3>
+          </div>
+          <ul class="text-xs text-vault-textMuted flex flex-col gap-2.5">
+            <li class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-emerald-400 text-base mt-0.5 shrink-0">check_circle</span>
+              <span><strong class="text-vault-textIvory">Centro de la ciudad:</strong> <span class="text-emerald-400 font-bold uppercase">Totalmente GRATIS</span> en cualquier compra.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-vault-gold text-base mt-0.5 shrink-0">two_wheeler</span>
+              <span><strong class="text-vault-textIvory">Resto de la ciudad de Cuenca:</strong> Tarifa fija de <strong class="text-vault-gold font-mono">$2,50</strong>.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-vault-goldLight text-base mt-0.5 shrink-0">stars</span>
+              <span><strong class="text-vault-goldLight font-bold uppercase">Envío Local GRATIS</strong> en compras a partir de <strong class="font-mono text-vault-goldLight">$40,00</strong>.</span>
+            </li>
+          </ul>
+          <div class="mt-4 pt-3 border-t border-vault-border/50 text-[11px] text-vault-textMuted font-mono flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-vault-gold text-[15px]">schedule</span>
+            <span>Entregas discretas en Cuenca en menos de 45 a 60 minutos.</span>
+          </div>
+        </div>
+
+        <!-- Tarjeta Envíos Nacionales -->
+        <div class="bg-vault-surface border border-vault-gold/40 p-5 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-20 h-20 bg-vault-gold/5 rounded-bl-full pointer-events-none"></div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-vault-gold text-2xl">flight_takeoff</span>
+            <h3 class="font-cinzel text-base uppercase tracking-wider text-vault-textIvory font-bold">Envíos Nacionales</h3>
+          </div>
+          <ul class="text-xs text-vault-textMuted flex flex-col gap-2.5">
+            <li class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-vault-gold text-base mt-0.5 shrink-0">package_2</span>
+              <span><strong class="text-vault-textIvory">Cotización por Destino:</strong> Tarifa según ciudad vía Servientrega / Courier seguro.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-emerald-400 text-base mt-0.5 shrink-0">verified</span>
+              <span><strong class="text-vault-goldLight font-bold uppercase">Envío Nacional 100% GRATIS</strong> en adquisiciones a partir de <strong class="font-mono text-vault-goldLight">$65,00</strong>.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-vault-gold text-base mt-0.5 shrink-0">shield</span>
+              <span>Empaque confidencial sellado al vacío con código de rastreo en tiempo real.</span>
+            </li>
+          </ul>
+          <div class="mt-4 pt-3 border-t border-vault-border/50 text-[11px] text-vault-textMuted font-mono flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-vault-gold text-[15px]">local_shipping</span>
+            <span>Tiempo de entrega estimado nacional: 24 horas hábiles.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button to Close / Continue Shopping -->
+      <div class="text-center">
+        <button type="button" onclick="closeDeliveryConditionsModal()" class="py-2.5 px-8 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black font-montserrat text-xs uppercase tracking-widest font-extrabold hover:brightness-110 shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all cursor-pointer">
+          Entendido, Continuar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL GLOBAL DE AUTENTICACIÓN (LOGIN / SIGN UP) -->
+  <!-- ========================================== -->
+  <div id="authModal" class="fixed inset-0 z-[90] hidden items-center justify-center bg-black/90 backdrop-blur-md p-4 transition-all duration-300">
+    <div class="relative w-full max-w-md bg-vault-surface border border-vault-gold/60 p-4 sm:p-6 gold-glow-lg gold-border-ornate max-h-[92vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-vault-textMuted hover:text-vault-gold p-1 transition-colors">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <!-- VIEW A: INICIAR SESIÓN (LOGIN) -->
+      <div id="authLoginView" class="flex flex-col">
+        <div class="text-center mb-5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-vault-elevated border border-vault-gold/30 mb-2">
+            <span class="material-symbols-outlined text-vault-gold text-[16px]">lock</span>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-vault-gold font-bold">Portal de Miembros</span>
+          </div>
+          <h2 class="font-cinzel text-2xl uppercase tracking-wider text-vault-textIvory font-bold">
+            Acceso Black Vault
+          </h2>
+          <p class="text-xs text-vault-textMuted mt-1">Ingresa tus credenciales para acceder a tu membresía VIP.</p>
+        </div>
+
+        <!-- Inline Error Banner for Login -->
+        <div id="loginError" class="hidden mb-3 p-2.5 bg-red-950/70 border border-red-500/60 text-red-200 text-xs flex items-center gap-2">
+          <span class="material-symbols-outlined text-[16px] text-red-400">error</span>
+          <span id="loginErrorText">Error al iniciar sesión</span>
+        </div>
+
+        <form id="loginForm" onsubmit="handleLoginSubmit(event)" class="flex flex-col gap-4">
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1 font-semibold">Correo Electrónico</label>
+            <input type="email" id="loginEmail" required placeholder="tu@correo.com" oninput="validateEmailLive('loginEmail', 'loginEmailHint')" class="w-full bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-textIvory text-xs px-3.5 py-2.5 outline-none transition-colors">
+            <div id="loginEmailHint" class="mt-1 flex items-center gap-1.5 text-[11px] text-vault-gold/80 transition-all duration-200">
+              <span class="material-symbols-outlined text-[14px]">info</span>
+              <span>Ingresa un correo electrónico válido</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1 font-semibold">Contraseña</label>
+            <div class="relative">
+              <input type="password" id="loginPassword" required placeholder="••••••••" class="w-full bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-textIvory text-xs px-3.5 py-2.5 pr-10 outline-none transition-colors">
+              <button type="button" onclick="togglePasswordVisibility('loginPassword', this)" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-vault-textMuted hover:text-vault-gold p-1">
+                <span class="material-symbols-outlined text-[18px]">visibility</span>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" id="loginSubmitBtn" class="w-full mt-2 py-3 px-4 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black font-montserrat text-xs uppercase tracking-widest font-extrabold hover:brightness-110 shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all cursor-pointer">
+            Ingresar
+          </button>
+        </form>
+
+        <div class="text-center mt-6 pt-4 border-t border-vault-border text-xs text-vault-textMuted">
+          ¿Aún no eres miembro? 
+          <button onclick="switchAuthView('signup')" class="text-vault-gold font-bold hover:underline ml-1 cursor-pointer">
+            Regístrate aquí
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW B: REGISTRO DE CUENTA (SIGN UP) -->
+      <div id="authSignupView" class="hidden flex flex-col">
+        <div class="text-center mb-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-vault-elevated border border-vault-gold/30 mb-2">
+            <span class="material-symbols-outlined text-vault-gold text-[16px]">stars</span>
+            <span class="text-[10px] uppercase tracking-[0.2em] text-vault-gold font-bold">Membresía Exclusiva</span>
+          </div>
+          <h2 class="font-cinzel text-xl sm:text-2xl uppercase tracking-wider text-vault-textIvory font-bold">
+            Membresía Exclusiva
+          </h2>
+          <p class="text-xs text-vault-textMuted mt-0.5">Crea tu cuenta para activar tu pase de fidelidad digital.</p>
+        </div>
+
+        <!-- Inline Error Banner for Signup -->
+        <div id="signupError" class="hidden mb-3 p-2.5 bg-red-950/70 border border-red-500/60 text-red-200 text-xs flex items-center gap-2">
+          <span class="material-symbols-outlined text-[16px] text-red-400">error</span>
+          <span id="signupErrorText">Error en el registro</span>
+        </div>
+
+        <form id="signupForm" onsubmit="handleSignupSubmit(event)" class="flex flex-col gap-3 max-h-[60vh] overflow-y-auto pr-1">
+          <!-- 1. Nombre y Apellido -->
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1 font-semibold">Nombre y Apellido</label>
+            <input type="text" id="signupName" required placeholder="Tu nombre y apellido" class="w-full bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-textIvory text-xs px-3.5 py-2 outline-none transition-colors">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- 2. Fecha de Nacimiento (Validación +18) -->
+            <div>
+              <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1 font-semibold">Fecha de Nacimiento (+18)</label>
+              <input type="date" id="signupBirthdate" required class="w-full bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-textIvory text-xs px-2.5 py-2 outline-none transition-colors [color-scheme:dark]">
+            </div>
+
+            <!-- 3. Ciudad (Desplegable Alfabético) -->
+            <div>
+              <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1 font-semibold">Ciudad</label>
+              <select id="signupCity" required class="w-full bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-textIvory text-xs px-2.5 py-2 outline-none transition-colors">
+                <option value="Ambato">Ambato</option>
+                <option value="Babahoyo">Babahoyo</option>
+                <option value="Cuenca" selected>Cuenca</option>
+                <option value="Esmeraldas">Esmeraldas</option>
+                <option value="Guayaquil">Guayaquil</option>
+                <option value="Ibarra">Ibarra</option>
+                <option value="Latacunga">Latacunga</option>
+                <option value="Loja">Loja</option>
+                <option value="Machala">Machala</option>
+                <option value="Manta">Manta</option>
+                <option value="Portoviejo">Portoviejo</option>
+                <option value="Quevedo">Quevedo</option>
+                <option value="Quito">Quito</option>
+                <option value="Riobamba">Riobamba</option>
+                <option value="Salinas">Salinas</option>
+                <option value="Santo Domingo">Santo Domingo</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 4. Correo Electrónico con Validación Visual Permanente -->
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1 font-semibold">Correo Electrónico</label>
+            <input type="email" id="signupEmail" required placeholder="tu@correo.com" oninput="validateEmailLive('signupEmail', 'signupEmailHint')" class="w-full bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-textIvory text-xs px-3.5 py-2 outline-none transition-colors">
+            <div id="signupEmailHint" class="mt-1 flex items-center gap-1.5 text-[11px] text-vault-gold/80 transition-all duration-200">
+              <span class="material-symbols-outlined text-[14px]">info</span>
+              <span>Ingresa un correo electrónico válido</span>
+            </div>
+          </div>
+
+          <!-- 5. Celular / WhatsApp (+593) - Bloqueo Estricto de No Numéricos -->
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1 font-semibold">NÚMERO DE CELULAR</label>
+            <div class="flex items-center">
+              <span class="bg-[#1D1D1D] border border-r-0 border-vault-border px-3 py-2 text-xs text-vault-gold font-mono font-bold">+593</span>
+              <input type="tel" id="signupPhone" required placeholder="0991234567" maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" oninput="this.value = this.value.replace(/[^0-9]/g, '')" class="w-full bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-textIvory text-xs px-3 py-2 outline-none transition-colors font-mono">
+            </div>
+          </div>
+
+          <!-- 6. Contraseñas con botón de mostrar/ocultar + medidor de seguridad -->
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1 font-semibold">Contraseña</label>
+            <div class="relative">
+              <input type="password" id="signupPassword" required placeholder="••••••••" oninput="evaluatePasswordStrength()" class="w-full bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-textIvory text-xs px-3 py-2 pr-8 outline-none transition-colors">
+              <button type="button" onclick="togglePasswordVisibility('signupPassword', this)" class="absolute right-2 top-1/2 -translate-y-1/2 text-vault-textMuted hover:text-vault-gold p-0.5">
+                <span class="material-symbols-outlined text-[16px]">visibility</span>
+              </button>
+            </div>
+            <!-- Medidor de Seguridad de Contraseña -->
+            <div class="mt-2">
+              <div class="flex gap-1 mb-1">
+                <div id="pwBar1" class="h-1 flex-1 rounded-full bg-[#2A2A2A] transition-all duration-300"></div>
+                <div id="pwBar2" class="h-1 flex-1 rounded-full bg-[#2A2A2A] transition-all duration-300"></div>
+                <div id="pwBar3" class="h-1 flex-1 rounded-full bg-[#2A2A2A] transition-all duration-300"></div>
+              </div>
+              <span id="pwStrengthLabel" class="text-[11px] text-vault-textMuted/70">Mín. 8 caracteres, 1 mayúscula, 1 número, 1 símbolo</span>
+            </div>
+          </div>
+          <div>
+            <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1 font-semibold">Confirmar Contraseña</label>
+            <div class="relative">
+              <input type="password" id="signupPasswordConfirm" required placeholder="••••••••" class="w-full bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-textIvory text-xs px-3 py-2 pr-8 outline-none transition-colors">
+              <button type="button" onclick="togglePasswordVisibility('signupPasswordConfirm', this)" class="absolute right-2 top-1/2 -translate-y-1/2 text-vault-textMuted hover:text-vault-gold p-0.5">
+                <span class="material-symbols-outlined text-[16px]">visibility</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Checkbox Términos y +18 -->
+          <div class="flex items-start gap-2 pt-1">
+            <input type="checkbox" id="signupTerms" required onchange="updateSignupSubmitState()" class="accent-[#D4AF37] mt-0.5 cursor-pointer">
+            <label for="signupTerms" class="text-[11px] text-vault-textMuted leading-snug cursor-pointer">
+              Confirmo que soy mayor de 18 años y acepto los términos de servicio.
+            </label>
+          </div>
+
+          <button type="submit" id="signupSubmitBtn" disabled class="w-full mt-2 py-3 px-4 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black font-montserrat text-xs uppercase tracking-widest font-extrabold hover:brightness-110 shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all cursor-pointer opacity-40 cursor-not-allowed" title="La contraseña debe ser FUERTE para continuar">
+            Crear Cuenta VIP
+          </button>
+        </form>
+
+        <div class="text-center mt-3 pt-3 border-t border-vault-border text-xs text-vault-textMuted">
+          ¿Ya tienes cuenta? 
+          <button onclick="switchAuthView('login')" class="text-vault-gold font-bold hover:underline ml-1 cursor-pointer">
+            Inicia sesión
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW C: CONFIRMACIÓN LIMPIA DE CREACIÓN DE CUENTA (FEEDBACK EN MODAL) -->
+      <div id="authSuccessView" class="hidden flex-col items-center justify-center text-center py-6 px-2">
+        <div class="w-16 h-16 rounded-full bg-vault-gold/15 border-2 border-vault-gold flex items-center justify-center mb-4 text-vault-gold shadow-[0_0_25px_rgba(212,175,55,0.35)]">
+          <span class="material-symbols-outlined text-4xl font-bold">check</span>
+        </div>
+        <h2 class="font-cinzel text-xl sm:text-2xl uppercase tracking-wider text-vault-textIvory font-bold mb-2">
+          ¡Tu cuenta está activa!
+        </h2>
+        <p class="text-sm text-vault-goldLight font-medium max-w-xs mb-2">
+          Eres parte de la familia Black Vault.
+        </p>
+        <p class="text-xs text-vault-textMuted max-w-xs mb-6" id="authSuccessMsg">
+          Tu membresía Black Club ha sido activada con éxito.
+        </p>
+        <button type="button" onclick="cerrarMensajeExitoFinal()" class="py-2.5 px-8 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black font-montserrat text-xs uppercase tracking-widest font-extrabold hover:brightness-110 shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all cursor-pointer">
+          Cerrar
+        </button>
+      </div>
+
+      <!-- VIEW D: VERIFICACIÓN OBLIGATORIA DE CÓDIGO POR CORREO -->
+      <div id="authOtpView" class="hidden flex flex-col text-center">
+        <div class="inline-flex items-center justify-center gap-2 px-3 py-1 bg-vault-elevated border border-vault-gold/30 mb-3 mx-auto">
+          <span class="material-symbols-outlined text-vault-gold text-[16px]">mark_email_read</span>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-vault-gold font-bold">Seguridad VIP</span>
+        </div>
+        <h2 class="font-cinzel text-xl sm:text-2xl uppercase tracking-wider text-vault-textIvory font-bold mb-1">
+          Verifica tu Cuenta
+        </h2>
+        <p class="text-xs text-vault-textMuted mb-3">
+          Ingresa el código de 6 dígitos enviado a:<br>
+          <strong id="otpEmailTarget" class="text-vault-gold font-mono">correo@ejemplo.com</strong>
+        </p>
+
+        <!-- Mensaje de aviso sobre Spam -->
+        <div class="mb-4 p-3 bg-vault-surface border-l-2 border-vault-gold text-left text-[11px] text-vault-textMuted leading-relaxed">
+          <strong class="text-vault-goldLight block mb-0.5">⚠️ Revisa tu carpeta de Spam o Correo no deseado:</strong>
+          Al ser un código de alta confidencialidad, el filtro de tu correo puede moverlo a Spam.
+        </div>
+
+        <!-- Banner de Error OTP -->
+        <div id="otpError" class="hidden mb-3 p-2 bg-red-950/70 border border-red-500/60 text-red-200 text-xs flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[15px] text-red-400">error</span>
+          <span id="otpErrorText">Código no válido</span>
+        </div>
+
+        <input type="text" id="otpCodeInput" maxlength="6" inputmode="numeric" placeholder="000000" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 6);" class="w-full text-center text-2xl font-mono tracking-[0.5em] bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-gold py-2.5 outline-none mb-2">
+
+        <div class="text-[11px] text-vault-textMuted mb-4">
+          Tiempo de validez: <span id="otpCountdown" class="text-vault-gold font-mono font-bold">15:00</span>
+        </div>
+
+        <button type="button" id="otpConfirmBtn" onclick="submitOtpVerification()" class="w-full py-3 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black font-montserrat text-xs uppercase tracking-widest font-extrabold hover:brightness-110 shadow-[0_0_15px_rgba(212,175,55,0.3)] transition-all cursor-pointer mb-3">
+          Validar y Activar Membresía
+        </button>
+
+        <div class="text-xs text-vault-textMuted">
+          ¿No recibiste el correo? 
+          <button type="button" id="otpResendBtn" onclick="resendOtpCode()" disabled class="text-vault-gold font-bold ml-1 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed">
+            Reenviar código (<span id="otpResendSecs">60</span>s)
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- OVERLAY CON SPINNER PARA CERRAR SESIÓN SUAVEMENTE -->
+  <div id="logoutOverlay" class="fixed inset-0 z-[120] hidden items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300">
+    <div class="flex flex-col items-center justify-center text-center p-6">
+      <div class="w-12 h-12 rounded-full border-2 border-vault-gold/20 border-t-vault-gold animate-spin mb-4"></div>
+      <span class="font-cinzel text-sm uppercase tracking-[0.25em] text-vault-gold font-bold">Cerrando sesión segura...</span>
+    </div>
+  </div>
+
+  <!-- OVERLAY CON SPINNER PARA INICIAR SESIÓN SUAVEMENTE -->
+  <div id="loginOverlay" class="fixed inset-0 z-[120] hidden items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300">
+    <div class="flex flex-col items-center justify-center text-center p-6">
+      <div class="w-12 h-12 rounded-full border-2 border-vault-gold/20 border-t-vault-gold animate-spin mb-4"></div>
+      <span class="font-cinzel text-sm uppercase tracking-[0.25em] text-vault-gold font-bold">Iniciando sesión segura...</span>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL INTERACTIVO DE COMPRA / DISPONIBILIDAD -->
+  <!-- ========================================== -->
+  <div id="orderModal" class="fixed inset-0 z-[95] hidden items-center justify-center bg-black/90 backdrop-blur-md p-4 transition-all duration-300">
+    <div class="relative w-full max-w-lg bg-[#0F0F0F] border border-vault-gold/60 p-4 sm:p-6 gold-glow-lg gold-border-ornate max-h-[92vh] overflow-y-auto">
+      
+      <!-- Close Button -->
+      <button onclick="closeOrderModal()" class="absolute top-4 right-4 text-vault-textMuted hover:text-vault-gold p-1 transition-colors cursor-pointer">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+
+      <div class="text-center mb-5">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-vault-elevated border border-vault-gold/40 mb-2">
+          <span class="material-symbols-outlined text-vault-gold text-[15px]">shopping_bag</span>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-vault-gold font-bold">Orden Exclusiva Cuenca</span>
+        </div>
+        <h2 class="font-cinzel text-xl sm:text-2xl uppercase tracking-wider text-vault-textIvory font-bold">
+          Configurar Pedido
+        </h2>
+        <p class="text-xs text-vault-textMuted mt-1">Selecciona tu sabor preferido y define la cantidad para coordinar tu entrega.</p>
+      </div>
+
+      <!-- Resumen del Dispositivo -->
+      <div class="bg-vault-surface border border-vault-gold/30 p-4 flex items-center gap-4 mb-5">
+        <div class="w-20 h-20 bg-vault-canvas border border-vault-border shrink-0 flex items-center justify-center p-1.5 overflow-hidden">
+          <img id="orderProductImg" src="" alt="Vape" class="w-full h-full object-contain vape-silhouette-shadow" style="filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.85)) drop-shadow(0 2px 8px rgba(212, 175, 55, 0.2));">
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <span id="orderProductBadge" class="text-[9px] uppercase tracking-wider font-bold bg-vault-gold/20 text-vault-gold px-1.5 py-0.5 border border-vault-gold/40">Original Certificado</span>
+            <span id="orderProductPuffs" class="text-[10px] text-vault-textMuted font-mono">50.000 Puffs</span>
+          </div>
+          <h3 id="orderProductName" class="font-cinzel text-lg text-vault-textIvory font-bold truncate">Spaceman SP50K</h3>
+          <div class="text-base text-vault-gold font-bold font-mono" id="orderProductPrice">$22,99</div>
+        </div>
+      </div>
+
+      <!-- 1. Selector de Sabores Disponibles con onchange para reiniciar contador -->
+      <div class="mb-4">
+        <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1.5 font-semibold flex items-center justify-between">
+          <span>1. Sabor Disponible</span>
+          <span class="text-vault-gold text-[10px] font-normal" id="orderStockStatusLabel">Disponibilidad verificada</span>
+        </label>
+        <select id="orderFlavorSelect" onchange="handleOrderFlavorChange()" class="w-full bg-[#161616] border border-vault-border focus:border-vault-gold text-vault-textIvory text-xs px-3.5 py-2.5 outline-none transition-colors cursor-pointer">
+          <!-- Populated dynamically via JS -->
+        </select>
+      </div>
+
+      <!-- 2. Selector de Cantidad con Tope Estricto según Stock Real -->
+      <div class="mb-4">
+        <label class="block text-[11px] uppercase tracking-wider text-vault-textMuted mb-1.5 font-semibold flex items-center justify-between">
+          <span>2. Cantidad de Unidades</span>
+          <span id="orderStockAvailableBadge" class="text-[10px] text-vault-gold font-mono font-semibold">(Stock: 1)</span>
+        </label>
+        <div class="flex items-center justify-between bg-vault-surface border border-vault-border px-4 py-2">
+          <span class="text-xs text-vault-textMuted">Unidades a ordenar:</span>
+          <div class="flex items-center gap-3">
+            <button type="button" id="orderQtyMinusBtn" onclick="changeOrderQuantity(-1)" class="w-8 h-8 rounded bg-[#1B1B1B] hover:bg-vault-gold hover:text-vault-black border border-vault-border hover:border-vault-gold text-vault-gold font-bold flex items-center justify-center transition-colors cursor-pointer text-base">-</button>
+            <span id="orderQuantityDisplay" class="w-8 text-center text-sm font-bold font-mono text-vault-textIvory">1</span>
+            <button type="button" id="orderQtyPlusBtn" onclick="changeOrderQuantity(1)" class="w-8 h-8 rounded bg-[#1B1B1B] hover:bg-vault-gold hover:text-vault-black border border-vault-border hover:border-vault-gold text-vault-gold font-bold flex items-center justify-center transition-colors cursor-pointer text-base">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Datos de sesión ocultos (tomados automáticamente del perfil activo) -->
+      <input type="hidden" id="orderCityInput" value="Cuenca">
+      <input type="hidden" id="orderClientNameInput" value="">
+
+      <!-- 3. Resumen de Compra (SIN mención de despacho gratis) -->
+      <div class="bg-vault-elevated border border-vault-gold/40 p-3.5 flex flex-col gap-1.5 mb-5 text-xs">
+        <div class="flex justify-between text-vault-textMuted">
+          <span>Precio unitario:</span>
+          <span id="orderSummarySubtotal" class="font-mono text-vault-textIvory">$0,00</span>
+        </div>
+        <div class="flex justify-between text-vault-textMuted">
+          <span>Cantidad seleccionada:</span>
+          <span id="orderSummaryCount" class="font-mono text-vault-textIvory">1 unidad</span>
+        </div>
+        <div class="pt-2 border-t border-vault-border/60 flex justify-between items-center text-sm font-bold">
+          <span class="text-vault-textIvory uppercase tracking-wider">Total a Pagar:</span>
+          <span id="orderSummaryTotal" class="text-vault-gold font-mono text-xl">$0,00</span>
+        </div>
+      </div>
+
+      <!-- 6. Botón Final de Confirmación vía WhatsApp -->
+      <button id="confirmOrderBtn" onclick="confirmOrderWhatsApp()" class="w-full py-3.5 px-4 bg-gradient-to-r from-[#1B3821] to-[#122216] hover:from-[#25D366] hover:to-[#1CAA4F] text-[#25D366] hover:text-vault-black border border-[#25D366]/80 font-montserrat text-xs uppercase tracking-widest font-extrabold shadow-[0_0_20px_rgba(37,211,102,0.25)] transition-all flex items-center justify-center gap-2 cursor-pointer group">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"></path>
+        </svg>
+        <span id="confirmOrderBtnText">Confirmar Pedido vía WhatsApp</span>
+      </button>
+
+      <p class="text-[10px] text-vault-textMuted/70 text-center mt-3">
+        Se abrirá WhatsApp con el formato oficial de Black Vault con el resumen exacto de tu solicitud.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- BARRA DE NAVEGACIÓN PRINCIPAL (FIXED HEADER) -->
+  <!-- ========================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-vault-gold/30 transition-all duration-300">
+    <div class="h-16 sm:h-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
+      
+      <!-- Official Logo Brand with Gold Contrast Filter -->
+      <a href="#inicio" onclick="switchTab('inicio'); return false;" class="flex items-center gap-2 sm:gap-3 shrink-0 group">
+        <div class="h-9 w-9 sm:h-12 sm:w-12 flex items-center justify-center">
+          <img src="Marca/ISOTIPO_GOLD.png" alt="Black Vault Isotipo" class="h-full w-full object-contain filter drop-shadow-[0_0_8px_rgba(212,175,55,0.45)] transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <div class="flex flex-col">
+          <span class="font-cinzel text-base sm:text-xl text-vault-gold tracking-[0.2em] uppercase font-bold leading-none">Black Vault</span>
+          <span class="text-[8px] sm:text-[9px] text-vault-textMuted tracking-[0.22em] uppercase leading-tight mt-1 font-semibold">PRESTIGE VAPES · CUENCA</span>
+        </div>
+      </a>
+
+      <!-- Desktop SPA Navigation Tabs (5 Tabs) -->
+      <nav class="hidden xl:flex items-center gap-1.5">
+        <button onclick="switchTab('inicio')" data-view="inicio" class="nav-tab-btn active px-4 py-2 text-xs uppercase tracking-widest font-semibold transition-all duration-200 border-b-2 border-vault-gold text-vault-gold bg-vault-gold/10">
+          Inicio
+        </button>
+        <button onclick="switchTab('sobre-nosotros')" data-view="sobre-nosotros" class="nav-tab-btn px-4 py-2 text-xs uppercase tracking-widest font-semibold transition-all duration-200 border-b-2 border-transparent text-vault-textMuted hover:text-vault-gold hover:bg-vault-surface">
+          Sobre Nosotros
+        </button>
+        <button onclick="switchTab('catalogo-vapes')" data-view="catalogo-vapes" class="nav-tab-btn px-4 py-2 text-xs uppercase tracking-widest font-semibold transition-all duration-200 border-b-2 border-transparent text-vault-textMuted hover:text-vault-gold hover:bg-vault-surface">
+          Catálogo Vapes
+        </button>
+        <button onclick="switchTab('black-club')" data-view="black-club" class="nav-tab-btn px-4 py-2 text-xs uppercase tracking-widest font-semibold transition-all duration-200 border-b-2 border-transparent text-vault-textMuted hover:text-vault-gold hover:bg-vault-surface">
+          Black Club (VIP)
+        </button>
+        <button onclick="switchTab('como-pedir')" data-view="como-pedir" class="nav-tab-btn px-4 py-2 text-xs uppercase tracking-widest font-semibold transition-all duration-200 border-b-2 border-transparent text-vault-textMuted hover:text-vault-gold hover:bg-vault-surface">
+          Cómo Pedir / Políticas
+        </button>
+      </nav>
+
+      <!-- Right Header Actions: Auth Link + WhatsApp + Mobile Trigger -->
+      <div class="flex items-center gap-3">
+        
+        <!-- Auth Header Container with Session Dropdown -->
+        <div class="relative" id="headerAuthContainer">
+          <button id="headerAuthBtn" onclick="handleHeaderAuthClick()" class="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 sm:py-2 text-[11px] sm:text-xs uppercase tracking-wider font-semibold text-vault-textIvory hover:text-vault-gold border border-vault-gold/30 hover:border-vault-gold bg-vault-surface hover:bg-vault-elevated transition-all duration-200 cursor-pointer">
+            <span class="material-symbols-outlined text-[17px] text-vault-gold" id="headerAuthIcon">person</span>
+            <span id="headerAuthText" class="hidden sm:inline">Iniciar Sesión</span>
+            <span class="material-symbols-outlined text-xs text-vault-gold hidden" id="headerAuthArrow">expand_more</span>
+          </button>
+
+          <!-- User Session Dropdown Menu -->
+          <div id="userDropdownMenu" class="hidden absolute right-0 top-full mt-2 w-56 bg-[#0E0E0E] border border-vault-gold/60 shadow-[0_10px_30px_rgba(0,0,0,0.95)] z-50 py-2 flex flex-col gold-glow">
+            <div class="px-4 py-2 border-b border-vault-border">
+              <span class="text-[10px] text-vault-gold uppercase tracking-widest font-bold block">Miembro VIP</span>
+              <span class="text-xs text-vault-textIvory font-bold truncate block" id="dropdownUserName">Usuario</span>
+              <span class="text-[10px] text-vault-textMuted block" id="dropdownUserCity">Cuenca</span>
+            </div>
+            <button onclick="changeAccount()" class="w-full text-left px-4 py-2.5 text-xs text-vault-textIvory hover:text-vault-gold hover:bg-vault-elevated flex items-center gap-2 transition-colors cursor-pointer">
+              <span class="material-symbols-outlined text-[16px] text-vault-gold">switch_account</span>
+              <span>Cambiar de cuenta</span>
+            </button>
+            <button onclick="logoutUser()" class="w-full text-left px-4 py-2.5 text-xs text-red-400 hover:text-red-300 hover:bg-vault-elevated flex items-center gap-2 border-t border-vault-border/50 transition-colors cursor-pointer">
+              <span class="material-symbols-outlined text-[16px]">logout</span>
+              <span>Cerrar sesión</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Shipping & Deliveries Info Trigger (Oculto en móvil <640px, disponible en mobileMenu) -->
+        <div class="hidden sm:flex items-center">
+          <div class="flex flex-col items-end justify-center px-3 py-1.5 bg-[#141414]/90 border border-vault-gold/40 hover:border-vault-gold transition-all duration-200 shadow-sm text-right">
+            <span class="text-[11px] sm:text-xs text-vault-textIvory font-medium tracking-wide flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-vault-gold text-[15px]">local_shipping</span>
+              ¿Entregas y envíos gratis?
+            </span>
+            <button type="button" onclick="openDeliveryConditionsModal()" class="text-[10px] sm:text-[11px] text-vault-gold hover:text-vault-goldLight underline decoration-vault-gold/60 hover:decoration-vault-gold underline-offset-2 transition-all font-bold tracking-wider uppercase cursor-pointer">
+              Condiciones
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Hamburger -->
+        <button onclick="toggleMobileMenu()" aria-label="Abrir menú" class="xl:hidden w-9 h-9 sm:w-10 sm:h-10 border border-vault-gold/40 bg-vault-surface text-vault-gold flex items-center justify-center cursor-pointer hover:bg-vault-elevated transition-colors">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden xl:hidden bg-[#0F0F0F] border-t border-vault-gold/30 px-4 py-3 flex flex-col gap-1 shadow-2xl">
+      <button onclick="openDeliveryConditionsModal(); toggleMobileMenu();" class="text-left py-2.5 px-3 text-xs uppercase tracking-wider text-vault-gold font-bold bg-[#141414] border border-vault-gold/40 flex items-center justify-between mb-1">
+        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">local_shipping</span>¿Envíos gratis?</span>
+        <span class="underline text-vault-goldLight">Condiciones</span>
+      </button>
+      <button onclick="switchTab('inicio'); toggleMobileMenu();" class="text-left py-2.5 px-3 text-xs uppercase tracking-wider text-vault-gold font-bold bg-[#1A1A1A] border-l-2 border-vault-gold">Inicio</button>
+      <button onclick="switchTab('sobre-nosotros'); toggleMobileMenu();" class="text-left py-2.5 px-3 text-xs uppercase tracking-wider text-vault-textMuted hover:text-vault-gold">Sobre Nosotros</button>
+      <button onclick="switchTab('catalogo-vapes'); toggleMobileMenu();" class="text-left py-2.5 px-3 text-xs uppercase tracking-wider text-vault-textMuted hover:text-vault-gold">Catálogo Vapes</button>
+      <button onclick="switchTab('black-club'); toggleMobileMenu();" class="text-left py-2.5 px-3 text-xs uppercase tracking-wider text-vault-textMuted hover:text-vault-gold">Black Club (VIP)</button>
+      <button onclick="switchTab('como-pedir'); toggleMobileMenu();" class="text-left py-2.5 px-3 text-xs uppercase tracking-wider text-vault-textMuted hover:text-vault-gold">Cómo Pedir / Políticas</button>
+      
+      <!-- Mobile Auth Options -->
+      <div id="mobileAuthLoggedOut" class="border-t border-vault-border/50 pt-2 mt-1">
+        <button onclick="openAuthModal('login'); toggleMobileMenu();" class="w-full text-left py-2.5 px-3 text-xs uppercase tracking-wider text-vault-gold font-semibold flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-sm">person</span>
+          <span>Iniciar Sesión / Registro</span>
+        </button>
+      </div>
+
+      <div id="mobileAuthLoggedIn" class="hidden border-t border-vault-border/50 pt-2 mt-1 flex flex-col gap-1">
+        <div class="px-3 py-1 text-xs text-vault-gold font-bold flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-sm">stars</span>
+          <span id="mobileUserName">Mi Cuenta</span>
+        </div>
+        <button onclick="changeAccount(); toggleMobileMenu();" class="text-left py-2 px-3 text-xs uppercase tracking-wider text-vault-textIvory hover:text-vault-gold flex items-center gap-2">
+          <span class="material-symbols-outlined text-xs text-vault-gold">switch_account</span>
+          <span>Cambiar de cuenta</span>
+        </button>
+        <button onclick="logoutUser(); toggleMobileMenu();" class="text-left py-2 px-3 text-xs uppercase tracking-wider text-red-400 flex items-center gap-2">
+          <span class="material-symbols-outlined text-xs">logout</span>
+          <span>Cerrar sesión</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- MAIN CONTAINER (SPA VIEWS) -->
+  <!-- ========================================== -->
+  <main class="w-full pt-16 sm:pt-20 relative z-10 min-h-[calc(100vh-160px)]">
+
+    <!-- Cintillo Informativo de Envíos Exclusivo para Celular -->
+    <div class="block sm:hidden w-full bg-[#111111] border-b border-vault-gold/30 px-4 py-2 text-center">
+      <div class="inline-flex items-center justify-center gap-1.5 text-xs text-vault-textIvory">
+        <span>🚚 ¿Entregas y envíos gratis?</span>
+        <button type="button" onclick="openDeliveryConditionsModal()" class="text-vault-gold font-bold underline decoration-vault-gold/60 hover:text-vault-goldLight cursor-pointer">
+          [Ver Condiciones]
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PESTAÑA 1: INICIO -->
+    <!-- ========================================== -->
+    <div id="view-inicio" class="spa-view transition-opacity duration-300">
+      
+      <!-- Hero Banner -->
+      <section class="relative w-full pt-10 sm:pt-16 pb-16 sm:pb-24 overflow-hidden border-b border-vault-gold/20">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[520px] bg-[radial-gradient(circle,rgba(212,175,55,0.14)_0%,rgba(0,180,216,0.03)_45%,transparent_70%)] pointer-events-none blur-3xl"></div>
+        
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <!-- Left Column: Value Proposition -->
+            <div class="lg:col-span-7 flex flex-col items-start gap-5 z-10">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-vault-surface border border-vault-gold/50 shadow-[0_0_15px_rgba(212,175,55,0.12)]">
+                <span class="material-symbols-outlined text-vault-gold text-[16px]">verified</span>
+                <span class="text-xs text-vault-gold uppercase tracking-[0.25em] font-semibold">Reserva Oficial • Cuenca, Ecuador</span>
+              </div>
+
+              <h1 class="font-cinzel text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wide text-vault-textIvory uppercase leading-tight">
+                Elegancia, Discreción y <br class="hidden sm:inline">
+                <span class="bg-gradient-to-r from-vault-goldLight via-vault-gold to-vault-goldBronze bg-clip-text text-transparent">Potencia Pura</span>
+              </h1>
+
+              <p class="text-base text-vault-textMuted max-w-xl leading-relaxed">
+                Selección oficial de vaporizadores desechables de alta gama con perfiles sensoriales calibrados. Hardware sellado de fábrica con código QR verificable y entrega confidencial en Cuenca.
+              </p>
+
+              <!-- Actions CTA -->
+              <div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+                <button onclick="switchTab('catalogo-vapes')" class="cursor-pointer inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black text-xs uppercase tracking-widest font-extrabold shadow-[0_0_25px_rgba(212,175,55,0.3)] hover:brightness-110 transition-all">
+                  <span>Ver Catálogo de Vapes</span>
+                  <span class="material-symbols-outlined text-base">arrow_forward</span>
+                </button>
+
+              </div>
+
+              <!-- Quick Local Guarantees -->
+              <div class="grid grid-cols-3 gap-4 pt-4 border-t border-vault-gold/20 w-full max-w-lg mt-2">
+                <div>
+                  <span class="text-xs text-vault-gold font-bold block uppercase tracking-wider">100% Original</span>
+                  <span class="text-[11px] text-vault-textMuted">QR Verificable</span>
+                </div>
+                <div>
+                  <span class="text-xs text-vault-gold font-bold block uppercase tracking-wider">Cuenca Centro</span>
+                  <span class="text-[11px] text-vault-textMuted">Entrega Gratuita</span>
+                </div>
+                <div>
+                  <span class="text-xs text-vault-gold font-bold block uppercase tracking-wider">24h Respaldo</span>
+                  <span class="text-[11px] text-vault-textMuted">Garantía de Fábrica</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Flagship Showcase with REAL IMAGE & SENSORY PROFILE ONLY -->
+            <div class="lg:col-span-5 relative flex items-center justify-center">
+              <div class="absolute w-72 h-72 md:w-96 md:h-96 rounded-full border border-vault-gold/20 pointer-events-none animate-[pulse_4s_ease-in-out_infinite]"></div>
+              
+              <div class="relative w-full max-w-md bg-vault-surface border border-vault-gold/60 p-5 gold-glow-lg">
+                <!-- Standout Best Seller Gold Badge -->
+                <div class="flex items-center justify-between border-b border-vault-border pb-2.5 mb-3">
+                  <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-vault-gold to-vault-goldBronze text-vault-black text-[11px] tracking-[0.2em] uppercase font-extrabold shadow-md">
+                    <span class="material-symbols-outlined text-[15px]">star</span>
+                    <span>MÁS VENDIDO / BEST SELLER</span>
+                  </div>
+                  <span data-badge-puffs="spaceman" class="text-[11px] text-vault-textMuted uppercase font-mono">50.000 PUFFS</span>
+                </div>
+
+                <div class="relative h-72 w-full overflow-hidden bg-vault-canvas flex items-center justify-center border border-vault-border p-3">
+                  <img src="Foto Vapes/SPACEMAN_PAG.png" alt="Spaceman SP50K Luxury Vape" class="w-full h-full object-contain vape-silhouette-shadow transition-transform duration-500 hover:scale-105" style="filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.85)) drop-shadow(0 2px 8px rgba(212, 175, 55, 0.2));">
+                  
+                  <div class="absolute top-3 left-3 bg-[#0E0E0E]/90 border border-vault-gold/60 px-2.5 py-1 backdrop-blur-md flex items-center gap-1.5 shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-vault-cyan animate-ping"></span>
+                    <span data-badge-puffs="spaceman" class="text-[11px] text-vault-textIvory font-bold tracking-wider">50.000 PUFFS</span>
+                  </div>
+                </div>
+
+                <div class="pt-3 flex flex-col gap-1.5">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="font-cinzel text-lg text-vault-textIvory font-bold tracking-wide">Spaceman SP50K</h3>
+                      <p class="text-xs text-vault-gold font-medium">Sensación: Vapor Ultra Denso & Suave</p>
+                    </div>
+                    <div class="text-right">
+                      <span data-badge-price="spaceman" class="text-xl text-vault-gold font-bold block font-mono">$25,00</span>
+                      <span class="text-[10px] text-vault-cyan tracking-wider uppercase font-semibold">En Stock Cuenca</span>
+                    </div>
+                  </div>
+                  <!-- Pure Sensory Experience (No single flavor locked) -->
+                  <p class="text-xs text-vault-textMuted leading-relaxed pt-1 border-t border-vault-border/40">
+                    Vapor ultra denso y aterciopelado con entrega de calada constante y sedosa. Golpe de garganta equilibrado y fresco para una experiencia sensorial superior.
+                  </p>
+                  <button onclick="openOrderModal('spaceman')" class="w-full mt-2 py-2 px-3 bg-vault-elevated hover:bg-vault-gold text-vault-gold hover:text-vault-black border border-vault-gold/50 text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+                    <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+                    <span>Ordenar Dispositivo</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlights Destacados de la Semana (From Foto Vapes with General Device Sensory Profiles) -->
+      <section class="w-full py-8 sm:py-16 border-b border-vault-gold/20">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between mb-8">
+            <div>
+              <span class="text-xs text-vault-gold uppercase tracking-[0.25em] block mb-1 font-semibold">Vault Highlights</span>
+              <h2 class="font-cinzel text-2xl sm:text-3xl font-bold tracking-wide text-vault-textIvory uppercase">
+                Novedades Destacadas de la Semana
+              </h2>
+            </div>
+            <button onclick="switchTab('catalogo-vapes')" class="hidden sm:inline-flex items-center gap-1 text-vault-gold hover:text-vault-goldLight text-xs uppercase tracking-wider font-semibold cursor-pointer">
+              <span>Ver Todo el Catálogo</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Highlight 1: Spaceman -->
+            <div class="bg-vault-surface border border-vault-gold/40 p-5 flex flex-col justify-between hover:border-vault-gold transition-all duration-300">
+              <div>
+                <div class="relative h-56 w-full overflow-hidden bg-vault-canvas mb-3 flex items-center justify-center p-3">
+                  <img src="Foto Vapes/SPACEMAN_PAG.png" alt="Spaceman SP50K" class="w-full h-full object-contain vape-silhouette-shadow transition-transform duration-500 hover:scale-105" style="filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.85)) drop-shadow(0 2px 8px rgba(212, 175, 55, 0.2));">
+                  <span data-badge-puffs="spaceman" class="absolute top-2 left-2 px-2 py-0.5 bg-vault-gold text-vault-black text-[10px] font-bold uppercase tracking-wider shadow">50.000 Puffs</span>
+                  <span data-badge-price="spaceman" class="absolute top-2 right-2 px-2 py-0.5 bg-[#141414]/90 border border-vault-gold/50 text-vault-gold text-[10px] font-mono font-bold shadow">$25,00</span>
+                </div>
+                <h3 class="font-cinzel text-lg text-vault-textIvory font-bold mb-1">Spaceman SP50K</h3>
+                <p class="text-xs text-vault-gold font-medium mb-1">Sensación: Máxima Densidad & Autonomía</p>
+                <p class="text-xs text-vault-textMuted mb-4 leading-relaxed">
+                  Vapor ultra denso y aterciopelado con entrega de calada constante y sedosa. Gran volumen y frescura equilibrada.
+                </p>
+              </div>
+              <button onclick="openOrderModal('spaceman')" class="w-full py-2.5 bg-vault-elevated border border-vault-gold/50 hover:bg-vault-gold text-vault-gold hover:text-vault-black text-xs uppercase tracking-wider font-bold transition-colors cursor-pointer flex items-center justify-center gap-1.5">
+                <span class="material-symbols-outlined text-sm">shopping_cart</span>
+                <span>Pedir / Ver Sabores</span>
+              </button>
+            </div>
+
+            <!-- Highlight 2: Dojo Sphere X -->
+            <div class="bg-vault-surface border border-vault-gold/40 p-5 flex flex-col justify-between hover:border-vault-gold transition-all duration-300">
+              <div>
+                <div class="relative h-56 w-full overflow-hidden bg-vault-canvas mb-3 flex items-center justify-center p-3">
+                  <img src="Foto Vapes/DOJO_PAG.png" alt="Dojo Sphere X" class="w-full h-full object-contain vape-silhouette-shadow transition-transform duration-500 hover:scale-105" style="filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.85)) drop-shadow(0 2px 8px rgba(212, 175, 55, 0.2));">
+                  <span data-badge-puffs="dojo" class="absolute top-2 left-2 px-2 py-0.5 bg-vault-gold text-vault-black text-[10px] font-bold uppercase tracking-wider shadow">20.000 Puffs</span>
+                  <span data-badge-price="dojo" class="absolute top-2 right-2 px-2 py-0.5 bg-[#141414]/90 border border-vault-gold/50 text-vault-gold text-[10px] font-mono font-bold shadow">$20,00</span>
+                </div>
+                <h3 class="font-cinzel text-lg text-vault-textIvory font-bold mb-1">Dojo Sphere X</h3>
+                <p class="text-xs text-vault-gold font-medium mb-1">Sensación: Flujo Sedoso Envolvente</p>
+                <p class="text-xs text-vault-textMuted mb-4 leading-relaxed">
+                  Calada envolvente y suave con flujo optimizado para una inhalación fluida. Vapor limpio, fresco y refinado.
+                </p>
+              </div>
+              <button onclick="openOrderModal('dojo')" class="w-full py-2.5 bg-vault-elevated border border-vault-gold/50 hover:bg-vault-gold text-vault-gold hover:text-vault-black text-xs uppercase tracking-wider font-bold transition-colors cursor-pointer flex items-center justify-center gap-1.5">
+                <span class="material-symbols-outlined text-sm">shopping_cart</span>
+                <span>Pedir / Ver Sabores</span>
+              </button>
+            </div>
+
+            <!-- Highlight 3: Baddie Bar -->
+            <div class="bg-vault-surface border border-vault-gold/40 p-5 flex flex-col justify-between hover:border-vault-gold transition-all duration-300">
+              <div>
+                <div class="relative h-56 w-full overflow-hidden bg-vault-canvas mb-3 flex items-center justify-center p-3">
+                  <img src="Foto Vapes/BADDIE_PAG.png" alt="Baddie Bar" class="w-full h-full object-contain vape-silhouette-shadow transition-transform duration-500 hover:scale-105" style="filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.85)) drop-shadow(0 2px 8px rgba(212, 175, 55, 0.2));">
+                  <span data-badge-puffs="baddie" class="absolute top-2 left-2 px-2 py-0.5 bg-vault-gold text-vault-black text-[10px] font-bold uppercase tracking-wider shadow">15.000 Puffs</span>
+                  <span data-badge-price="baddie" class="absolute top-2 right-2 px-2 py-0.5 bg-[#141414]/90 border border-vault-gold/50 text-vault-gold text-[10px] font-mono font-bold shadow">$14,00</span>
+                </div>
+                <h3 class="font-cinzel text-lg text-vault-textIvory font-bold mb-1">Baddie Bar</h3>
+                <p class="text-xs text-vault-gold font-medium mb-1">Sensación: Calada Ágil & Frescura Viva</p>
+                <p class="text-xs text-vault-textMuted mb-4 leading-relaxed">
+                  Calada ágil con respuesta inmediata al inhalar. Vapor cristalino y ligero, golpe nítido y balance fresco.
+                </p>
+              </div>
+              <button onclick="openOrderModal('baddie')" class="w-full py-2.5 bg-vault-elevated border border-vault-gold/50 hover:bg-vault-gold text-vault-gold hover:text-vault-black text-xs uppercase tracking-wider font-bold transition-colors cursor-pointer flex items-center justify-center gap-1.5">
+                <span class="material-symbols-outlined text-sm">shopping_cart</span>
+                <span>Pedir / Ver Sabores</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PESTAÑA 2: SOBRE NOSOTROS -->
+    <!-- ========================================== -->
+    <div id="view-sobre-nosotros" class="spa-view hidden transition-opacity duration-300">
+      <section class="w-full py-8 sm:py-16 border-b border-vault-gold/20">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <!-- Header -->
+          <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+            <span class="text-xs text-vault-gold uppercase tracking-[0.25em] block mb-2 font-bold">Black Vault • Empresa</span>
+            <h2 class="font-cinzel text-2xl sm:text-3xl md:text-5xl uppercase font-bold text-vault-textIvory tracking-wide mb-3">
+              El Estándar Black Vault
+            </h2>
+            <p class="text-base text-vault-textMuted leading-relaxed">
+              Curaduría, autenticidad y reserva absoluta en Cuenca, Ecuador.
+            </p>
+          </div>
+
+          <!-- Nuestra Filosofía -->
+          <div class="bg-vault-surface border-2 border-vault-gold/40 p-6 sm:p-10 max-w-4xl mx-auto mb-16 relative gold-glow-lg">
+            <div class="absolute top-2 left-2 w-3 h-3 border-t-2 border-l-2 border-vault-gold"></div>
+            <div class="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-vault-gold"></div>
+            <div class="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-vault-gold"></div>
+            <div class="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-vault-gold"></div>
+
+            <div class="flex items-center gap-2 text-vault-gold mb-3">
+              <span class="material-symbols-outlined">workspace_premium</span>
+              <span class="text-xs uppercase tracking-widest font-bold">Nuestra Filosofía</span>
+            </div>
+
+            <h3 class="font-cinzel text-2xl text-vault-textIvory font-bold mb-4">
+              Elevando la Escena de Vaporización en Cuenca
+            </h3>
+
+            <p class="text-sm text-vault-textMuted leading-relaxed mb-4">
+              Black Vault nace como una respuesta definitiva a la proliferación de imitaciones y hardware no regulado en el mercado local. Establecemos una reserva de prestigio donde cada dispositivo proviene de lotes sellados de fábrica con trazabilidad directa y certificación comprobable.
+            </p>
+
+            <p class="text-sm text-vault-textMuted leading-relaxed">
+              Diseñado para usuarios exigentes que valoran la discreción, el rendimiento uniforme del hardware y la entrega inmediata. Nuestra operación en Cuenca garantiza atención privada, confidencial y con respaldo inmediato de garantía.
+            </p>
+          </div>
+
+          <!-- 3 Pilares Fundamentales -->
+          <div class="max-w-6xl mx-auto mb-16">
+            <div class="text-center mb-10">
+              <h3 class="font-cinzel text-2xl uppercase tracking-wider text-vault-gold font-bold">3 Pilares Fundamentales</h3>
+              <p class="text-xs text-vault-textMuted mt-1">El compromiso inquebrantable que define cada pedido</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Pilar 1 -->
+              <div class="bg-vault-surface border border-vault-gold/40 p-6 flex flex-col justify-between">
+                <div>
+                  <div class="w-12 h-12 bg-vault-elevated border border-vault-gold flex items-center justify-center text-vault-gold mb-4">
+                    <span class="material-symbols-outlined text-2xl">diamond</span>
+                  </div>
+                  <h4 class="font-cinzel text-lg text-vault-textIvory font-bold mb-2">1. Curaduría Exclusiva</h4>
+                  <p class="text-xs text-vault-textMuted leading-relaxed">
+                    Selección rigurosa de los dispositivos desechables más avanzados del mercado global, garantizando rendimiento, sabor y calidad superior.
+                  </p>
+                </div>
+                <div class="pt-4 border-t border-vault-border mt-4 text-vault-gold text-[11px] uppercase tracking-wider font-bold">
+                  Dispositivos de Vanguardia
+                </div>
+              </div>
+
+              <!-- Pilar 2 -->
+              <div class="bg-vault-surface border border-vault-gold/40 p-6 flex flex-col justify-between">
+                <div>
+                  <div class="w-12 h-12 bg-vault-elevated border border-vault-gold flex items-center justify-center text-vault-gold mb-4">
+                    <span class="material-symbols-outlined text-2xl">visibility_off</span>
+                  </div>
+                  <h4 class="font-cinzel text-lg text-vault-textIvory font-bold mb-2">2. Discreción Total</h4>
+                  <p class="text-xs text-vault-textMuted leading-relaxed">
+                    Protocolo confidencial de entrega privada con empaques sellados sin distintivos exteriores y coordinación directa en toda la ciudad de Cuenca.
+                  </p>
+                </div>
+                <div class="pt-4 border-t border-vault-border mt-4 text-vault-gold text-[11px] uppercase tracking-wider font-bold">
+                  Privacidad Blindada
+                </div>
+              </div>
+
+              <!-- Pilar 3 -->
+              <div class="bg-vault-surface border border-vault-gold/40 p-6 flex flex-col justify-between">
+                <div>
+                  <div class="w-12 h-12 bg-vault-elevated border border-vault-gold flex items-center justify-center text-vault-gold mb-4">
+                    <span class="material-symbols-outlined text-2xl">verified</span>
+                  </div>
+                  <h4 class="font-cinzel text-lg text-vault-textIvory font-bold mb-2">3. Autenticidad Verificada</h4>
+                  <p class="text-xs text-vault-textMuted leading-relaxed">
+                    Cero clones. Cada empaque cuenta con raspable holográfico y código QR de validación en el sitio oficial del fabricante. Si no es original, te devolvemos el 100%.
+                  </p>
+                </div>
+                <div class="pt-4 border-t border-vault-border mt-4 text-vault-gold text-[11px] uppercase tracking-wider font-bold">
+                  Cero Imitaciones
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Presencia Local Cuenca -->
+          <div class="bg-gradient-to-r from-vault-surface via-vault-elevated to-vault-surface border border-vault-gold/30 p-6 max-w-4xl mx-auto flex items-center justify-center gap-4 text-center">
+            <span class="material-symbols-outlined text-4xl text-vault-gold">location_city</span>
+            <div class="text-left">
+              <h4 class="font-cinzel text-lg font-bold text-vault-textIvory uppercase">Presencia Local en Cuenca</h4>
+              <p class="text-xs text-vault-textMuted">Entregas gratuitas en el centro histórico de la ciudad y cobertura metropolitana inmediata.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PESTAÑA 3: CATÁLOGO VAPES (CATÁLOGO OFICIAL REAL) -->
+    <!-- ========================================== -->
+    <div id="view-catalogo-vapes" class="spa-view hidden transition-opacity duration-300">
+      <section class="w-full py-8 sm:py-16 border-b border-vault-gold/20">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-10">
+            <div>
+              <div class="inline-flex items-center gap-1.5 mb-2 text-vault-gold">
+                <span class="material-symbols-outlined text-[16px]">inventory_2</span>
+                <span class="text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold">Catálogo Oficial Black Vault • Cuenca</span>
+              </div>
+              <h2 class="font-cinzel text-2xl sm:text-3xl md:text-4xl font-bold tracking-wide text-vault-textIvory uppercase">
+                Vaporizadores Seleccionados
+              </h2>
+
+            </div>
+
+            <!-- Sync Status & Manual Refresh Trigger -->
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+              <div id="catalogSyncBadge" class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-[#121212] border border-vault-gold/40 text-[9px] sm:text-[10px] text-vault-gold font-mono uppercase tracking-wider shadow-sm">
+                <span id="catalogSyncDot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span id="catalogSyncText">Inventario en Vivo</span>
+              </div>
+              <button onclick="fetchCatalogFromGoogleSheets(true)" title="Actualizar catálogo desde Google Sheets" class="p-1.5 sm:p-2 bg-vault-surface hover:bg-vault-elevated border border-vault-gold/40 hover:border-vault-gold text-vault-gold transition-all duration-200 cursor-pointer flex items-center justify-center">
+                <span class="material-symbols-outlined text-[16px] sm:text-[18px]">sync</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Grid: 100% Dinámico Renderizado desde Google Sheets -->
+          <div id="dynamicCatalogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Loading State Skeleton -->
+            <div id="catalogLoadingState" class="col-span-full py-20 flex flex-col items-center justify-center text-center bg-vault-surface/50 border border-vault-gold/20 p-8">
+              <div class="w-12 h-12 rounded-full border-2 border-vault-gold/20 border-t-vault-gold animate-spin mb-4"></div>
+              <span class="text-xs uppercase tracking-[0.25em] text-vault-gold font-bold">Cargando Catálogo Oficial...</span>
+              <p class="text-xs text-vault-textMuted mt-1">Sincronizando modelos, perfiles sensoriales y stock desde Google Sheets</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PESTAÑA 4: BLACK CLUB (VIP) LIMPIA Y VINCULADA -->
+    <!-- ========================================== -->
+    <div id="view-black-club" class="spa-view hidden transition-opacity duration-300">
+      <section class="w-full py-8 sm:py-16 bg-[#0D0D0D] border-b border-vault-gold/20 relative overflow-hidden">
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-[radial-gradient(circle,rgba(212,175,55,0.08)_0%,transparent_70%)] pointer-events-none"></div>
+
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
+            <span class="font-cinzel text-vault-gold text-base sm:text-lg md:text-xl block mb-1">Membresía & Fidelidad Exclusiva</span>
+            <h2 class="font-cinzel text-2xl sm:text-3xl md:text-5xl uppercase font-bold text-vault-textIvory tracking-widest mb-3">
+              Black Vault Club
+            </h2>
+            <p class="text-sm text-vault-textMuted leading-relaxed">
+              Cada adquisición suma sellos a tu cuenta personal. Disfruta de beneficios confidenciales, descuentos acumulables y prioridad absoluta en entregas directas en Cuenca.
+            </p>
+          </div>
+
+          <!-- Estructura Limpia: Tarjeta Digital VIP y Pasaporte de Sellos como Elementos Principales -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center max-w-6xl mx-auto">
+            
+            <!-- VIP Digital Pass (Visual Principal Vinculado a Auth) -->
+            <div class="lg:col-span-5 flex flex-col items-center">
+              
+              <div class="relative w-full max-w-sm aspect-[1.586/1] bg-gradient-to-br from-[#1C1B1B] via-vault-surface to-vault-black border-2 border-vault-gold p-6 gold-glow-lg flex flex-col justify-between rounded-lg">
+                <div class="absolute inset-2 border border-vault-gold/30 pointer-events-none rounded"></div>
+                
+                <div class="flex items-center justify-between relative z-10">
+                  <div class="w-11 h-8 bg-gradient-to-tr from-vault-goldBronze to-vault-goldLight rounded-sm border border-vault-black p-1 flex flex-col justify-between shadow-inner">
+                    <div class="w-full h-px bg-[#735C00]"></div>
+                    <div class="w-full h-px bg-[#735C00]"></div>
+                    <div class="w-full h-px bg-[#735C00]"></div>
+                  </div>
+                  <span class="material-symbols-outlined text-vault-gold text-2xl">contactless</span>
+                </div>
+
+                <div class="relative z-10 my-auto">
+                  <span class="text-[10px] uppercase tracking-[0.3em] text-vault-gold block mb-1 font-bold">Member Accession</span>
+                  <div id="vipCardHolder" class="font-cinzel text-lg sm:text-xl tracking-[0.2em] text-vault-textIvory font-bold uppercase drop-shadow-md truncate">
+                    BLACK VAULT VIP ELITE
+                  </div>
+                  <div id="vipCardId" class="text-xs text-vault-gold/80 tracking-[0.2em] mt-1 font-mono">
+                    ID • #BV-8924-EC
+                  </div>
+                </div>
+
+                <div class="flex items-center justify-between relative z-10 border-t border-vault-gold/30 pt-2">
+                  <span id="vipCardCity" class="text-[10px] uppercase tracking-widest text-vault-textMuted truncate max-w-[170px]">Cuenca Private Member</span>
+                  <span id="vipCardStamps" class="text-[10px] uppercase tracking-widest text-vault-gold font-bold shrink-0">0 SELLOS VIP</span>
+                </div>
+              </div>
+
+              <!-- Estado o Botón de Acción según Login -->
+              <div id="vipPromptAction" class="mt-4 text-center">
+                <p class="text-xs text-vault-textMuted mb-2">Inicia sesión en el encabezado para personalizar tu tarjeta digital con tu nombre y ciudad.</p>
+                <button onclick="openAuthModal('login')" class="px-5 py-2 bg-vault-surface hover:bg-vault-elevated border border-vault-gold/50 text-vault-gold text-xs uppercase tracking-wider font-bold transition-all cursor-pointer">
+                  Iniciar Sesión / Registro
+                </button>
+              </div>
+
+              <div id="vipUserActiveBadge" class="hidden mt-4 text-center p-2.5 bg-vault-surface border border-vault-gold/50 text-vault-gold text-xs uppercase tracking-wider font-semibold">
+                ✓ Pase Digital Personalizado Activo
+              </div>
+
+              <!-- Contenedor Dinámico de Recompensas por Sellos VIP (5 y 10 Sellos) -->
+              <div id="vipRewardContainer" class="hidden mt-4 w-full max-w-sm"></div>
+            </div>
+
+            <!-- Interactive 10 Stamps Tracker (Limpio) -->
+            <div class="lg:col-span-7 bg-vault-surface border border-vault-gold/40 p-6 sm:p-8 flex flex-col gap-6 shadow-xl">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-vault-border pb-4">
+                <div>
+                  <h3 class="font-cinzel text-xl text-vault-textIvory font-bold uppercase tracking-wider">
+                    Pasaporte de Fidelidad Black Vault
+                  </h3>
+                  <p class="text-xs text-vault-textMuted mt-1">
+                    Acumula 1 sello por cada compra de vaporizadores.
+                  </p>
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-vault-elevated border border-vault-gold/50 self-start sm:self-auto">
+                  <span id="stampsCountText" class="text-xs text-vault-gold font-bold">0 / 10 SELLOS REGISTRADOS</span>
+                </div>
+              </div>
+
+              <!-- 10 Slots Matrix (Renderizado Dinámicamente) -->
+              <div id="stampsGrid" class="grid grid-cols-5 gap-2 sm:gap-3 py-2">
+                <!-- Slot 1 (Pending) -->
+                <div class="aspect-square bg-[#0E0E0E] border border-vault-border/60 flex flex-col items-center justify-center p-1 text-center opacity-60">
+                  <span class="text-xs text-vault-textMuted font-bold">01</span>
+                  <span class="text-[8px] text-vault-textMuted uppercase mt-0.5">Pendiente</span>
+                </div>
+                <!-- Slot 2 (Pending) -->
+                <div class="aspect-square bg-[#0E0E0E] border border-vault-border/60 flex flex-col items-center justify-center p-1 text-center opacity-60">
+                  <span class="text-xs text-vault-textMuted font-bold">02</span>
+                  <span class="text-[8px] text-vault-textMuted uppercase mt-0.5">Pendiente</span>
+                </div>
+                <!-- Slot 3 (Pending) -->
+                <div class="aspect-square bg-[#0E0E0E] border border-vault-border/60 flex flex-col items-center justify-center p-1 text-center opacity-60">
+                  <span class="text-xs text-vault-textMuted font-bold">03</span>
+                  <span class="text-[8px] text-vault-textMuted uppercase mt-0.5">Pendiente</span>
+                </div>
+                <!-- Slot 4 (Pending) -->
+                <div class="aspect-square bg-[#0E0E0E] border border-vault-border/60 flex flex-col items-center justify-center p-1 text-center opacity-60">
+                  <span class="text-xs text-vault-textMuted font-bold">04</span>
+                  <span class="text-[8px] text-vault-textMuted uppercase mt-0.5">Pendiente</span>
+                </div>
+                <!-- Slot 5 (INTERMEDIATE MILESTONE - 50% OFF) -->
+                <div class="aspect-square bg-gradient-to-br from-[#241A00] to-vault-surface border-2 border-vault-goldLight flex flex-col items-center justify-center p-1 text-center relative shadow-[0_0_18px_rgba(212,175,55,0.4)]">
+                  <span class="material-symbols-outlined text-vault-goldLight text-2xl animate-bounce">savings</span>
+                  <span class="text-[9px] uppercase font-bold text-vault-goldLight leading-none mt-1">50% OFF</span>
+                  <span class="text-[8px] text-[#ffe088] uppercase">5ª Compra</span>
+                </div>
+                <!-- Slot 6 (Pending) -->
+                <div class="aspect-square bg-[#0E0E0E] border border-vault-border flex flex-col items-center justify-center p-1 text-center opacity-60">
+                  <span class="text-xs text-vault-textMuted font-bold">06</span>
+                  <span class="text-[8px] text-vault-textMuted uppercase mt-0.5">Pendiente</span>
+                </div>
+                <!-- Slot 7 (Pending) -->
+                <div class="aspect-square bg-[#0E0E0E] border border-vault-border flex flex-col items-center justify-center p-1 text-center opacity-60">
+                  <span class="text-xs text-vault-textMuted font-bold">07</span>
+                  <span class="text-[8px] text-vault-textMuted uppercase mt-0.5">Pendiente</span>
+                </div>
+                <!-- Slot 8 (Pending) -->
+                <div class="aspect-square bg-[#0E0E0E] border border-vault-border flex flex-col items-center justify-center p-1 text-center opacity-60">
+                  <span class="text-xs text-vault-textMuted font-bold">08</span>
+                  <span class="text-[8px] text-vault-textMuted uppercase mt-0.5">Pendiente</span>
+                </div>
+                <!-- Slot 9 (Pending) -->
+                <div class="aspect-square bg-[#0E0E0E] border border-vault-border flex flex-col items-center justify-center p-1 text-center opacity-60">
+                  <span class="text-xs text-vault-textMuted font-bold">09</span>
+                  <span class="text-[8px] text-vault-textMuted uppercase mt-0.5">Pendiente</span>
+                </div>
+                <!-- Slot 10 (FINAL REWARD - FREE VAPE) -->
+                <div class="aspect-square bg-gradient-to-tr from-[#3C2F00] to-vault-surface border-2 border-vault-gold flex flex-col items-center justify-center p-1 text-center relative shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                  <span class="material-symbols-outlined text-vault-gold text-2xl">card_giftcard</span>
+                  <span class="text-[9px] uppercase font-bold text-vault-goldLight leading-none mt-1">VAPE GRATIS</span>
+                  <span class="text-[8px] text-[#ffe088] uppercase">10ª Compra</span>
+                </div>
+              </div>
+
+              <!-- Perks Summary -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-vault-border">
+                <div class="flex items-start gap-2.5">
+                  <span class="material-symbols-outlined text-vault-gold text-lg mt-0.5">local_shipping</span>
+                  <div>
+                    <span class="text-xs uppercase font-bold text-vault-textIvory block">Entregas Prioritarias</span>
+                    <span class="text-[11px] text-vault-textMuted">Sin costo adicional en Cuenca</span>
+                  </div>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <span class="material-symbols-outlined text-vault-gold text-lg mt-0.5">key</span>
+                  <div>
+                    <span class="text-xs uppercase font-bold text-vault-textIvory block">Preventas Privadas</span>
+                    <span class="text-[11px] text-vault-textMuted">Acceso antes de stock público</span>
+                  </div>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <span class="material-symbols-outlined text-vault-gold text-lg mt-0.5">support_agent</span>
+                  <div>
+                    <span class="text-xs uppercase font-bold text-vault-textIvory block">Concierge 24/7</span>
+                    <span class="text-[11px] text-vault-textMuted">Atención directa por WhatsApp</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PESTAÑA 5: CÓMO PEDIR / POLÍTICAS -->
+    <!-- ========================================== -->
+    <div id="view-como-pedir" class="spa-view hidden transition-opacity duration-300">
+      <section class="w-full py-8 sm:py-16 border-b border-vault-gold/20">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <!-- 3 Pasos de Compra (Directos y Claros) -->
+          <div class="bg-vault-surface border border-vault-gold/40 p-6 sm:p-10 mb-14 relative overflow-hidden shadow-2xl">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              
+              <div class="max-w-md">
+                <span class="text-xs text-vault-gold uppercase tracking-[0.25em] block mb-1 font-bold">Paso a Paso</span>
+                <h2 class="font-cinzel text-2xl lg:text-3xl uppercase text-vault-textIvory font-bold tracking-wider mb-2">
+                  Cómo Ordenar en Black Vault
+                </h2>
+                <p class="text-xs text-vault-textMuted leading-relaxed">
+                  Sin registros complicados ni fricción. Protocolo privado, directo y protegido para clientes en Cuenca.
+                </p>
+              </div>
+
+              <!-- 3 Steps Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1">
+                <div class="flex flex-col border-l-2 border-vault-gold pl-3 bg-vault-elevated/60 p-4">
+                  <span class="font-mono text-vault-gold font-bold text-2xl">01</span>
+                  <span class="text-xs uppercase text-vault-textIvory font-bold mt-1">Elige tu Producto</span>
+                  <p class="text-xs text-vault-textMuted mt-1 leading-relaxed">
+                    Selecciona tu vaporizador favorito en nuestro catálogo oficial.
+                  </p>
+                </div>
+
+                <div class="flex flex-col border-l-2 border-vault-gold pl-3 bg-vault-elevated/60 p-4">
+                  <span class="font-mono text-vault-gold font-bold text-2xl">02</span>
+                  <span class="text-xs uppercase text-vault-textIvory font-bold mt-1">Coordina por WhatsApp</span>
+                  <p class="text-xs text-vault-textMuted mt-1 leading-relaxed">
+                    Confirma sabor, modelo y define el punto de entrega seguro en Cuenca.
+                  </p>
+                </div>
+
+                <div class="flex flex-col border-l-2 border-vault-gold pl-3 bg-vault-elevated/60 p-4">
+                  <span class="font-mono text-vault-gold font-bold text-2xl">03</span>
+                  <span class="text-xs uppercase text-vault-textIvory font-bold mt-1">Recibe & Paga</span>
+                  <p class="text-xs text-vault-textMuted mt-1 leading-relaxed">
+                    Entrega confidencial y pago contra entrega en efectivo o transferencia.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Cuadrícula con Políticas Locales (4 Cards) -->
+          <div class="mb-14">
+            <div class="text-center max-w-xl mx-auto mb-10">
+              <div class="inline-flex items-center gap-1.5 mb-1 text-vault-gold">
+                <span class="material-symbols-outlined text-[16px]">shield</span>
+                <span class="text-xs uppercase tracking-[0.25em] font-semibold">Políticas & Garantía</span>
+              </div>
+              <h3 class="font-cinzel text-2xl uppercase font-bold text-vault-textIvory tracking-wide">
+                Estándar de Prestigio Local
+              </h3>
+              <p class="text-xs text-vault-textMuted mt-1">
+                Operación con cobertura total y soporte técnico en Cuenca.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              
+              <!-- Política 1 -->
+              <div class="bg-vault-surface border border-vault-gold/30 hover:border-vault-gold p-6 flex flex-col justify-between transition-all">
+                <div>
+                  <div class="w-12 h-12 bg-vault-elevated border border-vault-gold/40 flex items-center justify-center mb-4 text-vault-gold">
+                    <span class="material-symbols-outlined text-2xl">location_on</span>
+                  </div>
+                  <h4 class="font-cinzel text-lg text-vault-textIvory font-semibold mb-2">Entregas Discretas</h4>
+                  <p class="text-xs text-vault-textMuted leading-relaxed mb-4">
+                    Entregas gratuitas en el centro de la ciudad de Cuenca. Empaque neutro sellado sin leyendas exteriores.
+                  </p>
+                </div>
+                <div class="pt-3 border-t border-vault-border flex items-center gap-1.5 text-vault-gold text-[11px] font-semibold uppercase">
+                  <span class="material-symbols-outlined text-sm">schedule</span>
+                  <span>30 a 60 min promedio</span>
+                </div>
+              </div>
+
+              <!-- Política 2 -->
+              <div class="bg-vault-surface border border-vault-gold/30 hover:border-vault-gold p-6 flex flex-col justify-between transition-all">
+                <div>
+                  <div class="w-12 h-12 bg-vault-elevated border border-vault-gold/40 flex items-center justify-center mb-4 text-vault-gold">
+                    <span class="material-symbols-outlined text-2xl">verified_user</span>
+                  </div>
+                  <h4 class="font-cinzel text-lg text-vault-textIvory font-semibold mb-2">100% Originales</h4>
+                  <p class="text-xs text-vault-textMuted leading-relaxed mb-4">
+                    Dispositivos verificables mediante código QR de fábrica con empaque original termosellado de seguridad intacto. Cero clones.
+                  </p>
+                </div>
+                <div class="pt-3 border-t border-vault-border flex items-center gap-1.5 text-vault-gold text-[11px] font-semibold uppercase">
+                  <span class="material-symbols-outlined text-sm">qr_code_scanner</span>
+                  <span>Autenticidad Comprobable</span>
+                </div>
+              </div>
+
+              <!-- Política 3 -->
+              <div class="bg-vault-surface border border-vault-gold/30 hover:border-vault-gold p-6 flex flex-col justify-between transition-all">
+                <div>
+                  <div class="w-12 h-12 bg-vault-elevated border border-vault-gold/40 flex items-center justify-center mb-4 text-vault-gold">
+                    <span class="material-symbols-outlined text-2xl">autorenew</span>
+                  </div>
+                  <h4 class="font-cinzel text-lg text-vault-textIvory font-semibold mb-2">Garantía de Fábrica (24h)</h4>
+                  <p class="text-xs text-vault-textMuted leading-relaxed mb-4">
+                    Cobertura y reposición inmediata ante cualquier defecto electrónico o falla técnica de fábrica comprobable dentro de las primeras 24 horas.
+                  </p>
+                </div>
+                <div class="pt-3 border-t border-vault-border flex items-center gap-1.5 text-vault-gold text-[11px] font-semibold uppercase">
+                  <span class="material-symbols-outlined text-sm">lock_clock</span>
+                  <span>24 Horas de Respaldo</span>
+                </div>
+              </div>
+
+              <!-- Política 4 -->
+              <div class="bg-vault-surface border border-vault-gold/30 hover:border-vault-gold p-6 flex flex-col justify-between transition-all">
+                <div>
+                  <div class="w-12 h-12 bg-vault-elevated border border-vault-gold/40 flex items-center justify-center mb-4 text-vault-gold">
+                    <span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+                  </div>
+                  <h4 class="font-cinzel text-lg text-vault-textIvory font-semibold mb-2">Efectivo o Transferencia</h4>
+                  <p class="text-xs text-vault-textMuted leading-relaxed mb-4">
+                    Receptamos pagos en efectivo al momento de la entrega o transferencias bancarias directas a cuentas nacionales verificadas.
+                  </p>
+                </div>
+                <div class="pt-3 border-t border-vault-border flex items-center gap-1.5 text-vault-gold text-[11px] font-semibold uppercase">
+                  <span class="material-symbols-outlined text-sm">payments</span>
+                  <span>Efectivo & Transferencia</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Advertencia Legal Obligatoria +18 -->
+          <div class="max-w-3xl mx-auto bg-vault-surface border border-amber-500/40 p-4 flex items-center gap-3">
+            <span class="material-symbols-outlined text-amber-500 text-3xl shrink-0">warning</span>
+            <p class="text-xs text-vault-textMuted leading-relaxed">
+              <strong class="text-vault-textIvory uppercase">Aviso Legal Obligatorio (+18):</strong> La venta y entrega de vaporizadores en Black Vault está reservada exclusivamente para personas mayores de 18 años con documento de identidad ecuatoriano válido.
+            </p>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- FLOATING WHATSAPP CONCIERGE BUTTON -->
+  <!-- ========================================== -->
+  <a href="https://wa.me/593999001420?text=Hola%20Black%20Vault,%20deseo%20realizar%20una%20consulta%20sobre%20el%20cat%C3%A1logo." onclick="openBVWhatsApp(); return false;" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 bg-[#25D366] hover:bg-[#20ba59] text-vault-black p-3 sm:p-3.5 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.8),0_0_20px_rgba(37,211,102,0.4)] flex items-center justify-center transition-all duration-300 hover:scale-110 group cursor-pointer">
+    <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-current" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"></path>
+    </svg>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out text-xs font-bold text-vault-black uppercase tracking-wider pl-0 group-hover:pl-2">
+      WhatsApp Concierge
+    </span>
+  </a>
+
+  <!-- ========================================== -->
+  <!-- FOOTER CORPORATIVO SOBRIO -->
+  <!-- ========================================== -->
+  <footer class="w-full bg-[#080808] border-t border-vault-gold/30 py-12 relative z-10">
+    <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8">
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-vault-border pb-8">
+        <div class="flex flex-col">
+          <span class="font-cinzel text-xl text-vault-gold tracking-widest uppercase font-bold">Black Vault</span>
+          <span class="text-xs text-vault-textMuted tracking-[0.2em] uppercase mt-1">The Standard of Excellence • Cuenca, Ecuador</span>
+        </div>
+
+        <!-- Tab Links in Footer -->
+        <div class="flex flex-wrap items-center gap-4 text-xs uppercase tracking-wider text-vault-textMuted">
+          <button onclick="switchTab('inicio')" class="hover:text-vault-gold transition-colors cursor-pointer">Inicio</button>
+          <button onclick="switchTab('sobre-nosotros')" class="hover:text-vault-gold transition-colors cursor-pointer">Sobre Nosotros</button>
+          <button onclick="switchTab('catalogo-vapes')" class="hover:text-vault-gold transition-colors cursor-pointer">Catálogo Vapes</button>
+          <button onclick="switchTab('black-club')" class="hover:text-vault-gold transition-colors cursor-pointer">Black Club</button>
+          <button onclick="switchTab('como-pedir')" class="hover:text-vault-gold transition-colors cursor-pointer">Cómo Pedir / Políticas</button>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+          <!-- Bloque Oficial Redes Sociales -->
+          <div class="flex flex-col gap-1.5">
+            <span class="text-[11px] uppercase tracking-wider text-vault-textMuted font-semibold">Síguenos en nuestras redes:</span>
+            <div class="flex items-center gap-3">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/blackvoult_vps/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Black Vault" class="w-8 h-8 rounded-full bg-vault-surface border border-vault-gold/40 hover:border-vault-gold text-vault-gold hover:text-vault-goldLight flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(212,175,55,0.45)] group cursor-pointer">
+                <svg class="w-4 h-4 fill-current group-hover:scale-105 transition-transform" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+
+              <!-- TikTok -->
+              <a href="https://www.tiktok.com/@blackvaultvps" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Black Vault" class="w-8 h-8 rounded-full bg-vault-surface border border-vault-gold/40 hover:border-vault-gold text-vault-gold hover:text-vault-goldLight flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(212,175,55,0.45)] group cursor-pointer">
+                <svg class="w-4 h-4 fill-current group-hover:scale-105 transition-transform" viewBox="0 0 24 24">
+                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-1.01-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                </svg>
+              </a>
+
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/profile.php?id=61595470011558" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Black Vault" class="w-8 h-8 rounded-full bg-vault-surface border border-vault-gold/40 hover:border-vault-gold text-vault-gold hover:text-vault-goldLight flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_12px_rgba(212,175,55,0.45)] group cursor-pointer">
+                <svg class="w-4 h-4 fill-current group-hover:scale-105 transition-transform" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Insignia Legal +18 Años Intacta -->
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 border border-vault-gold/40 bg-vault-surface self-start sm:self-auto shrink-0">
+            <span class="material-symbols-outlined text-amber-400 text-[16px]">warning</span>
+            <span class="text-[11px] uppercase tracking-widest text-vault-textIvory font-semibold">+18 Años</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 text-vault-textMuted text-xs">
+        <p>© 2024 - 2026 Black Vault. Todos los derechos reservados. Vaporizadores desechables de alta gama y hardware certificado en Cuenca, Ecuador.</p>
+        <div class="flex items-center gap-4 text-[11px] tracking-widest uppercase">
+          <button onclick="switchTab('como-pedir')" class="hover:text-vault-gold transition-colors cursor-pointer">Privacidad & Vault Pass</button>
+          <span>•</span>
+          <button onclick="switchTab('como-pedir')" class="hover:text-vault-gold transition-colors cursor-pointer">Despacho Discreto</button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT: SPA NAVIGATION & MODALS & STATE -->
+  <!-- ========================================== -->
+  <script>
+    // ==========================================
+    // CONFIGURACIÓN GLOBAL BLACK VAULT
+    // ==========================================
+    const BV_WHATSAPP_NUMBER = "593999001420"; // Código de país 593 sin 0 inicial
+
+    function getBVWhatsAppUrl(customMessage) {
+      const defaultMsg = 'Hola Black Vault, deseo realizar una consulta sobre el catálogo.';
+      const msg = customMessage || defaultMsg;
+      return `https://wa.me/${BV_WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+    }
+
+    function openBVWhatsApp(customMessage) {
+      window.open(getBVWhatsAppUrl(customMessage), '_blank');
+    }
+
+    // Tab switching controller with Hash routing
+    function switchTab(viewId) {
+      const views = [
+        'inicio',
+        'sobre-nosotros',
+        'catalogo-vapes',
+        'black-club',
+        'como-pedir'
+      ];
+
+      if (!views.includes(viewId)) {
+        viewId = 'inicio';
+      }
+
+      views.forEach(function(v) {
+        const el = document.getElementById('view-' + v);
+        if (el) {
+          if (v === viewId) {
+            el.classList.remove('hidden');
+            setTimeout(function() {
+              el.classList.remove('opacity-0');
+            }, 10);
+          } else {
+            el.classList.add('hidden');
+            el.classList.add('opacity-0');
+          }
+        }
+      });
+
+      // Update Nav Buttons active state
+      const buttons = document.querySelectorAll('.nav-tab-btn');
+      buttons.forEach(function(btn) {
+        if (btn.getAttribute('data-view') === viewId) {
+          btn.classList.add('active', 'border-vault-gold', 'text-vault-gold', 'bg-vault-gold/10');
+          btn.classList.remove('border-transparent', 'text-vault-textMuted');
+        } else {
+          btn.classList.remove('active', 'border-vault-gold', 'text-vault-gold', 'bg-vault-gold/10');
+          btn.classList.add('border-transparent', 'text-vault-textMuted');
+        }
+      });
+
+      // Update URL hash without full reload
+      if (history.pushState) {
+        history.pushState(null, null, '#' + viewId);
+      } else {
+        location.hash = '#' + viewId;
+      }
+
+      // Smooth scroll to top on tab change
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Toggle Mobile Navigation Menu
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      if (menu) {
+        menu.classList.toggle('hidden');
+      }
+    }
+
+    // Age Verification (+18) Logic
+    const ageModal = document.getElementById('ageVerificationModal');
+    const verifyAgeBtn = document.getElementById('verifyAgeBtn');
+    const exitAgeBtn = document.getElementById('exitAgeBtn');
+
+    if (verifyAgeBtn && ageModal) {
+      verifyAgeBtn.addEventListener('click', function() {
+        ageModal.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(function() {
+          ageModal.style.display = 'none';
+        }, 500);
+        try {
+          sessionStorage.setItem('blackVaultAgeVerified', 'true');
+        } catch (e) {}
+      });
+    }
+
+    if (exitAgeBtn) {
+      exitAgeBtn.addEventListener('click', function() {
+        // Ocultar botones y mostrar mensaje sobrio de restricción sin alert ni redirección externa
+        const actionButtons = document.getElementById('ageActionButtons');
+        const restrictedNotice = document.getElementById('ageRestrictedNotice');
+        if (actionButtons) actionButtons.classList.add('hidden');
+        if (restrictedNotice) {
+          restrictedNotice.classList.remove('hidden');
+          restrictedNotice.classList.add('block');
+        }
+        // No se almacena nada en sessionStorage ni localStorage para que al presionar F5 aparezca desde cero
+      });
+    }
+
+    // Check previous verification in session
+    try {
+      if (sessionStorage.getItem('blackVaultAgeVerified') === 'true' && ageModal) {
+        ageModal.style.display = 'none';
+        ageModal.classList.add('opacity-0', 'pointer-events-none');
+      }
+    } catch (e) {}
+
+    // ==========================================
+    // CATÁLOGO DINÁMICO DESDE GOOGLE SHEETS EN TIEMPO REAL
+    // ==========================================
+    const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRAw_I5qrOSUIxmTsBVX4yuqzoQ01L0a4ByKM6CR6ToB7KqQAq5DlIkJB_YOOVlzFP_GnchNSIFfy_k/pub?output=csv';
+
+    let dynamicVapeCatalog = {};
+    let dynamicVapeList = [];
+    let currentOrderProduct = null;
+    let currentOrderQuantity = 1;
+
+    // Parser CSV robusto para Google Sheets con soporte de comillas y comas internas
+    function parseGoogleSheetCSV(text) {
+      const lines = text.trim().split(/\r?\n/);
+      if (lines.length < 2) return [];
+
+      function parseLine(line) {
+        const row = [];
+        let insideQuotes = false;
+        let entry = '';
+        for (let i = 0; i < line.length; i++) {
+          const char = line[i];
+          if (char === '"') {
+            if (insideQuotes && line[i + 1] === '"') {
+              entry += '"';
+              i++;
+            } else {
+              insideQuotes = !insideQuotes;
+            }
+          } else if (char === ',' && !insideQuotes) {
+            row.push(entry.trim());
+            entry = '';
+          } else {
+            entry += char;
+          }
+        }
+        row.push(entry.trim());
+        return row;
+      }
+
+      const headers = parseLine(lines[0]).map(h => h.trim().toLowerCase());
+      const rows = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        const values = parseLine(lines[i]);
+        const obj = {};
+        headers.forEach((h, idx) => {
+          obj[h] = values[idx] !== undefined ? values[idx] : '';
+        });
+        if (obj.nombre && obj.nombre.trim() !== '') {
+          rows.push(obj);
+        }
+      }
+      return rows;
+    }
+
+    // Función principal para consumir Google Sheets en tiempo real
+    async function fetchCatalogFromGoogleSheets(forceRefresh = false) {
+      const grid = document.getElementById('dynamicCatalogGrid');
+      const syncBadge = document.getElementById('catalogSyncText');
+      const syncDot = document.getElementById('catalogSyncDot');
+
+      if (forceRefresh && grid) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 flex flex-col items-center justify-center text-center bg-vault-surface/50 border border-vault-gold/20 p-8">
+            <div class="w-10 h-10 rounded-full border-2 border-vault-gold/20 border-t-vault-gold animate-spin mb-3"></div>
+            <span class="text-xs uppercase tracking-[0.25em] text-vault-gold font-bold">Actualizando Inventario...</span>
+          </div>`;
+      }
+
+      if (syncBadge) syncBadge.textContent = 'Sincronizando...';
+      if (syncDot) syncDot.className = 'w-2 h-2 rounded-full bg-vault-gold animate-spin';
+
+      try {
+        // Cache-busting con timestamp para reflejar cambios inmediatos de la hoja
+        const fetchUrl = `${GOOGLE_SHEET_CSV_URL}&t=${Date.now()}`;
+        const response = await fetch(fetchUrl);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const csvData = await response.text();
+        const rows = parseGoogleSheetCSV(csvData);
+
+        if (rows.length === 0) throw new Error('No se encontraron filas activas en la hoja');
+
+        dynamicVapeCatalog = {};
+        dynamicVapeList = [];
+
+        rows.forEach((r, idx) => {
+          // Parsear Puffs
+          const rawPuffs = r.puffs ? r.puffs.trim() : '';
+          const puffsDisplay = rawPuffs.toLowerCase().includes('puff') ? rawPuffs : `${rawPuffs} Puffs`;
+
+          // Parsear Precio
+          const cleanPrice = (r.precio || '0').replace('$', '').replace(',', '.').trim();
+          const numPrice = parseFloat(cleanPrice) || 0;
+          const precioDisplay = '$' + numPrice.toFixed(2).replace('.', ',');
+
+          // Parsear Sabores y Stock correspondiente
+          const flavorNames = r.sabores ? r.sabores.split(',').map(s => s.trim()).filter(Boolean) : [];
+          const stockValues = r.stock_sabores ? r.stock_sabores.split(',').map(s => parseInt(s.trim(), 10)) : [];
+
+          const flavorsWithStock = flavorNames.map((name, fIdx) => {
+            const stock = stockValues[fIdx] !== undefined && !isNaN(stockValues[fIdx]) ? stockValues[fIdx] : 1;
+            return {
+              name: name,
+              stock: stock,
+              isOutOfStock: stock <= 0
+            };
+          });
+
+          // Normalizar imagen
+          let imgFile = (r.imagen || '').trim();
+          if (!imgFile) {
+            imgFile = `${r.nombre.toUpperCase().replace(/\s+/g, '')}_PAG.png`;
+          }
+
+          const product = {
+            id: r.id || String(idx + 1),
+            nombre: r.nombre.trim(),
+            puffs: rawPuffs,
+            puffsDisplay: puffsDisplay,
+            precio: numPrice,
+            precioDisplay: precioDisplay,
+            sensacion: r.sensacion ? r.sensacion.trim() : 'Experiencia sensorial prémium de alta densidad y frescura balanceada.',
+            sabores: flavorsWithStock,
+            imagen: imgFile,
+            slug: r.nombre.toLowerCase().replace(/\s+/g, '-')
+          };
+
+          dynamicVapeCatalog[product.id] = product;
+          dynamicVapeCatalog[product.slug] = product;
+          dynamicVapeList.push(product);
+        });
+
+        renderDynamicCatalog(dynamicVapeList);
+        syncHomeHighlightBadges(dynamicVapeList);
+
+        if (syncBadge) syncBadge.textContent = 'En Vivo (' + dynamicVapeList.length + ' Modelos)';
+        if (syncDot) syncDot.className = 'w-2 h-2 rounded-full bg-emerald-400 animate-pulse';
+
+      } catch (error) {
+        console.error('Error al sincronizar catálogo desde Google Sheets:', error);
+        if (syncBadge) syncBadge.textContent = 'Modo Respaldo';
+        if (syncDot) syncDot.className = 'w-2 h-2 rounded-full bg-amber-400';
+        renderFallbackCatalog();
+      }
+    }
+
+    // Renderizado automático de tarjetas en la cuadrícula del catálogo
+    function renderDynamicCatalog(products) {
+      const grid = document.getElementById('dynamicCatalogGrid');
+      if (!grid) return;
+
+      if (!products || products.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center text-vault-textMuted bg-vault-surface border border-vault-border p-8">
+            <span class="material-symbols-outlined text-4xl text-vault-gold mb-2">inventory_2</span>
+            <p class="text-sm font-semibold">No hay modelos disponibles en este momento.</p>
+          </div>`;
+        return;
+      }
+
+      let cardsHtml = '';
+
+      products.forEach((item, index) => {
+        // Badges estéticos según modelo o autonomía
+        let badgeHtml = '';
+        const puffsNum = parseInt(item.puffs.replace(/[^0-9]/g, ''), 10) || 0;
+        
+        if (puffsNum >= 50000 || item.nombre.toLowerCase().includes('spaceman')) {
+          badgeHtml = `
+            <div class="absolute -top-3 left-4 bg-gradient-to-r from-vault-gold to-vault-goldBronze px-2.5 py-0.5 text-vault-black text-[10px] uppercase font-bold tracking-widest shadow-md">
+              ★ MÁS VENDIDO / BEST SELLER
+            </div>`;
+        } else if (puffsNum >= 20000) {
+          badgeHtml = `
+            <div class="absolute -top-3 left-4 bg-vault-elevated border border-vault-gold/60 px-2.5 py-0.5 text-vault-gold text-[10px] uppercase font-bold tracking-widest shadow-md">
+              SERIE PRESTIGE
+            </div>`;
+        }
+
+        // Conteo de sabores en stock
+        const totalFlavors = item.sabores.length;
+        const availableFlavors = item.sabores.filter(f => !f.isOutOfStock).length;
+        const stockHint = availableFlavors > 0 
+          ? `<span class="text-vault-gold font-semibold">${availableFlavors} de ${totalFlavors} sabores disponibles</span>`
+          : `<span class="text-red-400 font-semibold">Agotado temporalmente</span>`;
+
+        cardsHtml += `
+          <div class="group bg-vault-surface border border-vault-gold/40 hover:border-vault-gold p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-[0_15px_35px_rgba(212,175,55,0.18)] relative">
+            ${badgeHtml}
+            
+            <div>
+              <!-- Imagen Dinámica con Sombra de Silueta Transparente y Badges Sincronizados de Sheets -->
+              <div class="relative h-48 sm:h-64 w-full overflow-hidden bg-vault-canvas border border-vault-border mb-3 flex items-center justify-center p-3">
+                <img 
+                  src="Foto Vapes/${item.imagen}" 
+                  alt="${item.nombre}" 
+                  class="w-full h-full object-contain vape-silhouette-shadow transition-transform duration-500 group-hover:scale-105"
+                  style="filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.85)) drop-shadow(0 2px 8px rgba(212, 175, 55, 0.2));"
+                  onerror="this.onerror=null; this.src='LOGO.png'; this.classList.remove('vape-silhouette-shadow');"
+                >
+                <!-- Badges Superiores Dinámicos: Puffs (Izquierda) y Precio (Derecha) desde Google Sheets -->
+                <span class="absolute top-2 left-2 px-2 py-0.5 bg-vault-gold text-vault-black text-[10px] font-bold uppercase tracking-wider shadow">
+                  ${item.puffsDisplay}
+                </span>
+                <span class="absolute top-2 right-2 px-2 py-0.5 bg-[#141414]/90 border border-vault-gold/60 text-vault-gold text-[10px] font-mono font-bold shadow">
+                  ${item.precioDisplay}
+                </span>
+              </div>
+
+              <div class="flex items-center justify-between text-vault-textMuted mb-1 text-[11px]">
+                <span class="uppercase tracking-wider font-semibold text-vault-cyan">Original Certificado</span>
+                ${stockHint}
+              </div>
+
+              <h3 class="font-cinzel text-lg sm:text-xl text-vault-textIvory font-bold mb-1">${item.nombre}</h3>
+
+              <!-- Sensación Sensorial General del Dispositivo -->
+              <div class="bg-vault-elevated p-2.5 sm:p-3 border border-vault-border my-2 text-[11px] leading-snug text-vault-textMuted space-y-1">
+                <div class="text-[10px] uppercase tracking-wider text-vault-gold font-bold">Sensación del Dispositivo:</div>
+                <p class="text-[11px] leading-snug">${item.sensacion}</p>
+              </div>
+            </div>
+
+            <!-- Precios y Botón de Pedido Interactivo -->
+            <div class="pt-3 border-t border-vault-border flex items-center justify-between gap-2 mt-2">
+              <div>
+                <span class="text-[10px] text-vault-textMuted uppercase block font-semibold">Precio Cuenca</span>
+                <span class="text-xl text-vault-gold font-bold font-mono">${item.precioDisplay}</span>
+              </div>
+              <button 
+                onclick="openDynamicOrderModal('${item.id}')" 
+                class="px-4 py-2.5 bg-gradient-to-r from-vault-gold to-vault-goldBronze hover:brightness-110 text-vault-black font-bold uppercase tracking-wider text-xs transition-all duration-200 inline-flex items-center gap-1.5 shadow-[0_0_12px_rgba(212,175,55,0.25)] cursor-pointer"
+              >
+                <span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+                <span>Pedir</span>
+              </button>
+            </div>
+          </div>`;
+      });
+
+      grid.innerHTML = cardsHtml;
+    }
+
+    // Modal de compra dinámico con selector interactivo de sabores y control de stock
+    function openDynamicOrderModal(productId) {
+      // Verificar autenticación antes de abrir
+      const user = getCurrentUser();
+      if (!user || !user.name) {
+        window._pendingOrderProduct = productId;
+        openAuthModal('login');
+        return;
+      }
+      let vape = dynamicVapeCatalog[productId];
+      if (!vape) {
+        vape = dynamicVapeList.find(p => String(p.id) === String(productId) || p.slug === String(productId) || p.nombre.toLowerCase() === String(productId).toLowerCase());
+      }
+      if (!vape) return;
+
+      currentOrderProduct = vape;
+
+      const nameEl = document.getElementById('orderProductName');
+      const puffsEl = document.getElementById('orderProductPuffs');
+      const priceEl = document.getElementById('orderProductPrice');
+      const badgeEl = document.getElementById('orderProductBadge');
+      const imgEl = document.getElementById('orderProductImg');
+      const flavorSelect = document.getElementById('orderFlavorSelect');
+      const cityInput = document.getElementById('orderCityInput');
+      const clientNameInput = document.getElementById('orderClientNameInput');
+      const userHint = document.getElementById('orderUserStatusHint');
+
+      if (nameEl) nameEl.textContent = vape.nombre;
+      if (puffsEl) puffsEl.textContent = vape.puffsDisplay;
+      if (priceEl) priceEl.textContent = vape.precioDisplay;
+      if (badgeEl) badgeEl.textContent = 'Original Certificado';
+      
+      if (imgEl) {
+        imgEl.src = `Foto Vapes/${vape.imagen}`;
+        imgEl.alt = vape.nombre;
+        imgEl.onerror = function() {
+          this.onerror = null;
+          this.src = 'Marca/ISOTIPO_GOLD.png';
+          this.classList.remove('vape-silhouette-shadow');
+        };
+      }
+
+      // Prellenar datos de usuario desde sesión activa (siempre requerido)
+      if (cityInput) cityInput.value = user.city || 'Cuenca';
+      if (clientNameInput) clientNameInput.value = user.name || '';
+      const userHintEl = document.getElementById('orderUserStatusHint');
+      if (userHintEl) userHintEl.textContent = `Sesión activa: ${user.name}`;
+
+      // Llenar selector de sabores dinámicamente y validar stock
+      if (flavorSelect) {
+        flavorSelect.innerHTML = '';
+        let firstAvailableIndex = -1;
+
+        if (vape.sabores && vape.sabores.length > 0) {
+          vape.sabores.forEach((flv, idx) => {
+            const opt = document.createElement('option');
+            opt.value = flv.name;
+
+            if (flv.isOutOfStock) {
+              opt.textContent = `${flv.name} (Agotado)`;
+              opt.disabled = true;
+              opt.className = 'text-neutral-500 bg-neutral-900';
+            } else {
+              opt.textContent = flv.name;
+              opt.className = 'text-vault-textIvory bg-[#161616]';
+              if (firstAvailableIndex === -1) {
+                firstAvailableIndex = idx;
+              }
+            }
+            flavorSelect.appendChild(opt);
+          });
+
+          if (firstAvailableIndex !== -1) {
+            flavorSelect.selectedIndex = firstAvailableIndex;
+            flavorSelect.disabled = false;
+            currentOrderQuantity = 1;
+          } else {
+            const optNone = document.createElement('option');
+            optNone.textContent = 'Todos los sabores están agotados temporalmente';
+            optNone.disabled = true;
+            optNone.selected = true;
+            flavorSelect.appendChild(optNone);
+            flavorSelect.disabled = true;
+            currentOrderQuantity = 0;
+          }
+        }
+      }
+
+      updateOrderModalCalculation();
+
+      const orderModal = document.getElementById('orderModal');
+      if (orderModal) {
+        orderModal.classList.remove('hidden');
+        orderModal.classList.add('flex');
+      }
+    }
+
+    // Obtener el stock numérico exacto del sabor actualmente seleccionado
+    function getCurrentFlavorStock() {
+      if (!currentOrderProduct || !currentOrderProduct.sabores) return 0;
+      const flavorSelect = document.getElementById('orderFlavorSelect');
+      if (!flavorSelect) return 0;
+      const selectedName = flavorSelect.value;
+      const flavorObj = currentOrderProduct.sabores.find(f => f.name === selectedName);
+      if (!flavorObj) return 0;
+      return typeof flavorObj.stock === 'number' ? flavorObj.stock : 1;
+    }
+
+    // Reinicio automático de contador al cambiar de sabor
+    function handleOrderFlavorChange() {
+      const maxStock = getCurrentFlavorStock();
+      if (maxStock <= 0) {
+        currentOrderQuantity = 0;
+      } else {
+        // Reinicio estricto a base 1 según requerimiento
+        currentOrderQuantity = 1;
+      }
+      updateOrderModalCalculation();
+    }
+
+    // Control de cantidad con tope estricto según stock del sabor seleccionado
+    function changeOrderQuantity(delta) {
+      const maxStock = getCurrentFlavorStock();
+      if (maxStock <= 0) {
+        currentOrderQuantity = 0;
+        updateOrderModalCalculation();
+        return;
+      }
+
+      const targetQty = currentOrderQuantity + delta;
+      
+      // Tope mínimo: 1. Tope máximo: maxStock
+      if (targetQty >= 1 && targetQty <= maxStock) {
+        currentOrderQuantity = targetQty;
+        updateOrderModalCalculation();
+      }
+    }
+
+    function updateOrderModalCalculation() {
+      if (!currentOrderProduct) return;
+      const maxStock = getCurrentFlavorStock();
+      const qtyDisplay = document.getElementById('orderQuantityDisplay');
+      const minusBtn = document.getElementById('orderQtyMinusBtn');
+      const plusBtn = document.getElementById('orderQtyPlusBtn');
+      const stockBadge = document.getElementById('orderStockAvailableBadge');
+      const subtotalDisplay = document.getElementById('orderSummarySubtotal');
+      const countDisplay = document.getElementById('orderSummaryCount');
+      const totalDisplay = document.getElementById('orderSummaryTotal');
+      const confirmBtn = document.getElementById('confirmOrderBtn');
+      const confirmBtnText = document.getElementById('confirmOrderBtnText');
+
+      // Validar que no sobrepase el tope
+      if (currentOrderQuantity > maxStock) {
+        currentOrderQuantity = maxStock;
+      }
+      if (currentOrderQuantity < 1 && maxStock > 0) {
+        currentOrderQuantity = 1;
+      }
+
+      if (qtyDisplay) qtyDisplay.textContent = currentOrderQuantity;
+
+      // Deshabilitar botón + si llega al stock real del sabor
+      if (plusBtn) {
+        const cannotAdd = currentOrderQuantity >= maxStock || maxStock <= 0;
+        plusBtn.disabled = cannotAdd;
+        plusBtn.classList.toggle('opacity-30', cannotAdd);
+        plusBtn.classList.toggle('cursor-not-allowed', cannotAdd);
+      }
+
+      // Deshabilitar botón - si es 1 o stock 0
+      if (minusBtn) {
+        const cannotSub = currentOrderQuantity <= 1 || maxStock <= 0;
+        minusBtn.disabled = cannotSub;
+        minusBtn.classList.toggle('opacity-30', cannotSub);
+        minusBtn.classList.toggle('cursor-not-allowed', cannotSub);
+      }
+
+      // Badge visual de stock disponible
+      if (stockBadge) {
+        if (maxStock <= 0) {
+          stockBadge.textContent = '(Agotado)';
+          stockBadge.className = 'text-[10px] text-red-400 font-mono font-bold';
+        } else {
+          stockBadge.textContent = `(Disponible: ${maxStock})`;
+          stockBadge.className = 'text-[10px] text-vault-gold font-mono font-semibold';
+        }
+      }
+
+      const total = currentOrderProduct.precio * currentOrderQuantity;
+      const formattedTotal = '$' + total.toFixed(2).replace('.', ',');
+
+      if (subtotalDisplay) {
+        subtotalDisplay.textContent = currentOrderProduct.precioDisplay;
+      }
+      if (countDisplay) {
+        countDisplay.textContent = `${currentOrderQuantity} ${currentOrderQuantity === 1 ? 'unidad' : 'unidades'}`;
+      }
+      if (totalDisplay) {
+        totalDisplay.textContent = formattedTotal;
+      }
+
+      if (confirmBtn && confirmBtnText) {
+        if (maxStock <= 0) {
+          confirmBtn.disabled = true;
+          confirmBtn.classList.add('opacity-50', 'cursor-not-allowed');
+          confirmBtnText.textContent = 'Sabor Agotado';
+        } else {
+          confirmBtn.disabled = false;
+          confirmBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+          confirmBtnText.textContent = `Confirmar Pedido vía WhatsApp • ${formattedTotal}`;
+        }
+      }
+    }
+
+    // Botón Final de Confirmación con Ciudad y Nombre estructurados
+    function confirmOrderWhatsApp() {
+      if (!currentOrderProduct) return;
+      const flavorSelect = document.getElementById('orderFlavorSelect');
+      const flavor = flavorSelect ? flavorSelect.value : '';
+
+      const maxStock = getCurrentFlavorStock();
+      if (maxStock <= 0 || !flavor || flavor.includes('(Agotado)')) {
+        alert('El sabor seleccionado está agotado. Por favor elige otro sabor disponible.');
+        return;
+      }
+
+      const quantity = currentOrderQuantity;
+      const total = currentOrderProduct.precio * quantity;
+      const totalFormatted = total.toFixed(2).replace('.', ',');
+
+      // Ciudad: perfil o input en modal (por defecto "Cuenca")
+      const user = getCurrentUser();
+      const cityInput = document.getElementById('orderCityInput');
+      let city = (cityInput && cityInput.value.trim()) ? cityInput.value.trim() : ((user && user.city) ? user.city : 'Cuenca');
+
+      // Nombre del cliente: perfil o input en modal
+      const clientNameInput = document.getElementById('orderClientNameInput');
+      let clientName = (user && user.name) ? user.name : ((clientNameInput && clientNameInput.value.trim()) ? clientNameInput.value.trim() : 'Cliente');
+
+      // Estructura exacta requerida:
+      // "Hola Black Vault, deseo confirmar mi pedido: [Modelo] | Sabor: [Sabor] | Cantidad: [X] | Total: $[Monto] | Ciudad: [Ciudad]. Nombre: [Nombre]."
+      const message = `Hola Black Vault, deseo confirmar mi pedido: ${currentOrderProduct.nombre} | Sabor: ${flavor} | Cantidad: ${quantity} | Total: $${totalFormatted} | Ciudad: ${city}. Nombre: ${clientName}.`;
+
+      const whatsappUrl = `https://wa.me/${BV_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+      closeOrderModal();
+    }
+
+    // Respaldo estático en caso de desconexión temporal de Google Sheets
+    function renderFallbackCatalog() {
+      const fallbackProducts = [
+        {
+          id: '1',
+          nombre: 'North FT12000',
+          puffs: '12.000',
+          puffsDisplay: '12.000 Puffs',
+          precio: 13.00,
+          precioDisplay: '$13,00',
+          sensacion: 'Golpe suave y refrescante, vapor ligero y balance frutal constante.',
+          sabores: [
+            { name: 'Bahama Bliss', stock: 1, isOutOfStock: false },
+            { name: 'Tripple Berry', stock: 1, isOutOfStock: false },
+            { name: 'Frozen Grape', stock: 1, isOutOfStock: false }
+          ],
+          imagen: 'NORTH_PAG.png',
+          slug: 'north'
+        },
+        {
+          id: '2',
+          nombre: 'Baddie Bar',
+          puffs: '15.000',
+          puffsDisplay: '15.000 Puffs',
+          precio: 14.00,
+          precioDisplay: '$14,00',
+          sensacion: 'Calada densa y dulce con excelente retención aromática.',
+          sabores: [
+            { name: 'Blueberry Mint', stock: 2, isOutOfStock: false },
+            { name: 'Pink Lemonade', stock: 1, isOutOfStock: false }
+          ],
+          imagen: 'BADDIE_PAG.png',
+          slug: 'baddie-bar'
+        },
+        {
+          id: '3',
+          nombre: 'Memers Voyager',
+          puffs: '18.000',
+          puffsDisplay: '18.000 Puffs',
+          precio: 20.00,
+          precioDisplay: '$20,00',
+          sensacion: 'Vapor sedoso, golpe frío equilibrado y dulzor frutal definido.',
+          sabores: [
+            { name: 'Blue Razz Ice', stock: 1, isOutOfStock: false },
+            { name: 'Miami Mint', stock: 1, isOutOfStock: false },
+            { name: 'Watermelon Ice', stock: 0, isOutOfStock: true }
+          ],
+          imagen: 'MEMERS_PAG.png',
+          slug: 'memers'
+        },
+        {
+          id: '4',
+          nombre: 'Dojo Sphere X',
+          puffs: '20.000',
+          puffsDisplay: '20.000 Puffs',
+          precio: 20.00,
+          precioDisplay: '$20,00',
+          sensacion: 'Calada potente y consistente, frescura prolongada al exhalar.',
+          sabores: [
+            { name: 'Mexico Mango', stock: 2, isOutOfStock: false },
+            { name: 'Pink Lemonade', stock: 3, isOutOfStock: false }
+          ],
+          imagen: 'DOJO_PAG.png',
+          slug: 'dojo'
+        },
+        {
+          id: '5',
+          nombre: 'Spaceman SP50K',
+          puffs: '50.000',
+          puffsDisplay: '50.000 Puffs',
+          precio: 25.00,
+          precioDisplay: '$25,00',
+          sensacion: 'Golpe ultrasuave, vapor denso de alta gama con frescor helado persistente.',
+          sabores: [
+            { name: 'Blue Razz Ice', stock: 1, isOutOfStock: false },
+            { name: 'Miami Mint', stock: 2, isOutOfStock: false }
+          ],
+          imagen: 'SPACEMAN_PAG.png',
+          slug: 'spaceman'
+        }
+      ];
+
+      dynamicVapeCatalog = {};
+      dynamicVapeList = fallbackProducts;
+      fallbackProducts.forEach(p => {
+        dynamicVapeCatalog[p.id] = p;
+        dynamicVapeCatalog[p.slug] = p;
+      });
+
+      renderDynamicCatalog(fallbackProducts);
+      syncHomeHighlightBadges(fallbackProducts);
+    }
+
+    // ==========================================
+    // SISTEMA DE AUTENTICACIÓN (LOGIN / SIGN UP / SESIÓN)
+    // ==========================================
+    const authModal = document.getElementById('authModal');
+    const authLoginView = document.getElementById('authLoginView');
+    const authSignupView = document.getElementById('authSignupView');
+    const authSuccessView = document.getElementById('authSuccessView');
+
+    function openAuthModal(view) {
+      if (authModal) {
+        authModal.classList.remove('hidden');
+        authModal.classList.add('flex');
+        switchAuthView(view || 'login');
+      }
+    }
+
+   function closeAuthModal() {
+      if (authModal) {
+        authModal.classList.add('hidden');
+        authModal.classList.remove('flex');
+      }
+
+      // 1. Reset de formularios
+      const lForm = document.getElementById('loginForm');
+      if (lForm) lForm.reset();
+      const sForm = document.getElementById('signupForm');
+      if (sForm) sForm.reset();
+
+      // 2. Restaurar botón de Registro para que no se quede en "CREANDO MEMBRESÍA VIP..."
+      const signupBtn = document.getElementById('signupSubmitBtn');
+      if (signupBtn) {
+        signupBtn.disabled = true;
+        signupBtn.classList.add('opacity-40', 'cursor-not-allowed');
+        signupBtn.innerHTML = 'Crear Cuenta VIP';
+      }
+
+      // 3. Restaurar botón de Login
+      const loginBtn = document.getElementById('loginSubmitBtn');
+      if (loginBtn) {
+        loginBtn.disabled = false;
+        loginBtn.innerHTML = 'Ingresar';
+      }
+
+      // 4. Limpiar mensajes de error y medidor de contraseña
+      const loginErr = document.getElementById('loginError');
+      const signupErr = document.getElementById('signupError');
+      const otpErr = document.getElementById('otpError');
+      if (loginErr) loginErr.classList.add('hidden');
+      if (signupErr) signupErr.classList.add('hidden');
+      if (otpErr) otpErr.classList.add('hidden');
+      evaluatePasswordStrength();
+
+      // Si hay producto pendiente tras autenticarse
+      const user = getCurrentUser();
+      if (user && user.name && window._pendingOrderProduct) {
+        const pid = window._pendingOrderProduct;
+        window._pendingOrderProduct = null;
+        setTimeout(() => openDynamicOrderModal(pid), 200);
+      }
+    }
+
+    // Cierra el mensaje de bienvenida y te lleva al Black Club
+    function cerrarMensajeExitoFinal() {
+      closeAuthModal();
+      switchTab('black-club');
+    }
+    // ==========================================
+    // MODAL DE CONDICIONES DE ENTREGAS
+    // ==========================================
+    function openDeliveryConditionsModal() {
+      const modal = document.getElementById('deliveryConditionsModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeDeliveryConditionsModal() {
+      const modal = document.getElementById('deliveryConditionsModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    // Sincronización Dinámica de Badges (Puffs y Precio) en Home y Destacados
+    function syncHomeHighlightBadges(products) {
+      if (!products || !products.length) return;
+
+      products.forEach(item => {
+        const slug = (item.slug || '').toLowerCase();
+        const name = (item.nombre || '').toLowerCase();
+
+        function updateElements(key) {
+          document.querySelectorAll(`[data-badge-puffs="${key}"]`).forEach(el => {
+            el.textContent = item.puffsDisplay;
+          });
+          document.querySelectorAll(`[data-badge-price="${key}"]`).forEach(el => {
+            el.textContent = item.precioDisplay;
+          });
+        }
+
+        if (slug.includes('spaceman') || name.includes('spaceman')) updateElements('spaceman');
+        if (slug.includes('dojo') || name.includes('dojo')) updateElements('dojo');
+        if (slug.includes('baddie') || name.includes('baddie')) updateElements('baddie');
+        if (slug.includes('memers') || name.includes('memers')) updateElements('memers');
+        if (slug.includes('north') || name.includes('north')) updateElements('north');
+      });
+    }
+
+    function closeOrderModal() {
+      const orderModal = document.getElementById('orderModal');
+      if (orderModal) {
+        orderModal.classList.add('hidden');
+        orderModal.classList.remove('flex');
+      }
+    }
+
+    // openOrderModal: alias for Home highlights (resolves slug from dynamic catalog)
+    function openOrderModal(slug) {
+      const user = getCurrentUser();
+      if (!user || !user.name) {
+        window._pendingOrderProduct = slug;
+        openAuthModal('login');
+        return;
+      }
+      // Buscar producto por slug en el catálogo dinámico
+      let vape = dynamicVapeCatalog[slug];
+      if (!vape) {
+        vape = dynamicVapeList.find(p => p.slug === slug || p.nombre.toLowerCase().includes(slug.toLowerCase()));
+      }
+      if (vape) {
+        openDynamicOrderModal(vape.id);
+      } else {
+        // Catálogo aún no cargado: esperar y reintentar
+        setTimeout(() => openOrderModal(slug), 800);
+      }
+    }
+
+    function switchAuthView(view) {
+      if (authSuccessView) authSuccessView.classList.add('hidden');
+      if (authSuccessView) authSuccessView.classList.remove('flex');
+      
+      const loginErr = document.getElementById('loginError');
+      const signupErr = document.getElementById('signupError');
+      if (loginErr) loginErr.classList.add('hidden');
+      if (signupErr) signupErr.classList.add('hidden');
+
+      if (view === 'signup') {
+        if (authLoginView) authLoginView.classList.add('hidden');
+        if (authSignupView) authSignupView.classList.remove('hidden');
+      } else {
+        if (authSignupView) authSignupView.classList.add('hidden');
+        if (authLoginView) authLoginView.classList.remove('hidden');
+      }
+    }
+
+    // Toggle Password Visibility
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const icon = btn.querySelector('.material-symbols-outlined');
+      if (input) {
+        if (input.type === 'password') {
+          input.type = 'text';
+          if (icon) icon.textContent = 'visibility_off';
+        } else {
+          input.type = 'password';
+          if (icon) icon.textContent = 'visibility';
+        }
+      }
+    }
+
+    // ==========================================
+    // MEDIDOR DE SEGURIDAD DE CONTRASEÑA
+    // ==========================================
+    function getPasswordStrength(pass) {
+      // Retorna 0=Vacío, 1=Débil, 2=Medio, 3=Fuerte
+      if (!pass || pass.length === 0) return 0;
+      let score = 0;
+      if (pass.length >= 8) score++;
+      if (/[A-Z]/.test(pass)) score++;
+      if (/[0-9]/.test(pass)) score++;
+      if (/[^A-Za-z0-9]/.test(pass)) score++;
+      // Fuerte requiere todos los criterios (score == 4)
+      if (score === 4) return 3;  // STRONG
+      if (score >= 2) return 2;   // MEDIUM
+      return 1;                   // WEAK
+    }
+
+    // Validación estricta y dual para "CREAR CUENTA VIP":
+    // Requiere contraseña fuerte Y aceptación de términos y mayoría de edad
+    function updateSignupSubmitState() {
+      const passInput = document.getElementById('signupPassword');
+      const termsCheckbox = document.getElementById('signupTerms');
+      const submitBtn = document.getElementById('signupSubmitBtn');
+      if (!submitBtn) return;
+
+      const pass = passInput ? passInput.value : '';
+      const isStrong = getPasswordStrength(pass) >= 3;
+      const isTermsAccepted = termsCheckbox ? termsCheckbox.checked : false;
+
+      if (isStrong && isTermsAccepted) {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+        submitBtn.title = 'Crear cuenta VIP de acceso exclusivo';
+      } else {
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-40', 'cursor-not-allowed');
+        if (!isStrong && !isTermsAccepted) {
+          submitBtn.title = 'Se requiere contraseña FUERTE y confirmar términos (+18)';
+        } else if (!isStrong) {
+          submitBtn.title = 'La contraseña debe ser FUERTE para continuar';
+        } else {
+          submitBtn.title = 'Debes confirmar que eres mayor de 18 años y aceptar los términos';
+        }
+      }
+    }
+
+    function evaluatePasswordStrength() {
+      const passInput = document.getElementById('signupPassword');
+      const bar1 = document.getElementById('pwBar1');
+      const bar2 = document.getElementById('pwBar2');
+      const bar3 = document.getElementById('pwBar3');
+      const label = document.getElementById('pwStrengthLabel');
+      if (!passInput || !bar1 || !bar2 || !bar3 || !label) return;
+
+      const pass = passInput.value;
+      const strength = getPasswordStrength(pass);
+
+      // Reset bars
+      [bar1, bar2, bar3].forEach(b => b.className = 'h-1 flex-1 rounded-full bg-[#2A2A2A] transition-all duration-300');
+
+      if (strength === 0) {
+        label.textContent = 'Mín. 8 caracteres, 1 mayúscula, 1 número, 1 símbolo';
+        label.className = 'text-[11px] text-vault-textMuted/70';
+      } else if (strength === 1) {
+        bar1.className = 'h-1 flex-1 rounded-full bg-red-500 transition-all duration-300';
+        label.textContent = 'DÉBIL — Agrega mayúsculas, números y símbolos';
+        label.className = 'text-[11px] text-red-400 font-semibold';
+      } else if (strength === 2) {
+        bar1.className = 'h-1 flex-1 rounded-full bg-amber-400 transition-all duration-300';
+        bar2.className = 'h-1 flex-1 rounded-full bg-amber-400 transition-all duration-300';
+        label.textContent = 'MEDIA — Falta al menos un criterio más';
+        label.className = 'text-[11px] text-amber-400 font-semibold';
+      } else {
+        bar1.className = 'h-1 flex-1 rounded-full bg-emerald-400 transition-all duration-300';
+        bar2.className = 'h-1 flex-1 rounded-full bg-emerald-400 transition-all duration-300';
+        bar3.className = 'h-1 flex-1 rounded-full bg-emerald-400 transition-all duration-300';
+        label.textContent = '✓ FUERTE — Contraseña segura aceptada';
+        label.className = 'text-[11px] text-emerald-400 font-semibold';
+      }
+
+      // Sincroniza estado del botón según contraseña + checkbox de términos
+      updateSignupSubmitState();
+    }
+
+        // Validación visual permanente en tiempo real para campo de correo
+    function validateEmailLive(inputId, hintId) {
+      const input = document.getElementById(inputId);
+      const hint = document.getElementById(hintId);
+      if (!input || !hint) return;
+      const val = input.value.trim();
+      const valid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(val);
+
+      if (!val) {
+        hint.className = 'mt-1 flex items-center gap-1.5 text-[11px] text-vault-gold/80 transition-all duration-200';
+        hint.innerHTML = '<span class="material-symbols-outlined text-[14px]">info</span><span>Ingresa un correo electrónico válido</span>';
+        input.classList.remove('border-emerald-500', 'border-red-500');
+      } else if (valid) {
+        hint.className = 'mt-1 flex items-center gap-1.5 text-[11px] text-emerald-400 font-medium transition-all duration-200';
+        hint.innerHTML = '<span class="material-symbols-outlined text-[14px] text-emerald-400">check_circle</span><span>Correo electrónico válido</span>';
+        input.classList.add('border-emerald-500');
+        input.classList.remove('border-red-500');
+      } else {
+        hint.className = 'mt-1 flex items-center gap-1.5 text-[11px] text-amber-400/90 transition-all duration-200';
+        hint.innerHTML = '<span class="material-symbols-outlined text-[14px]">info</span><span>Ingresa un correo electrónico válido (ej. nombre@dominio.com)</span>';
+        input.classList.remove('border-emerald-500');
+      }
+    }
+
+    // Validación estricta de correo electrónico
+    function isValidEmail(email) {
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return emailRegex.test(email);
+    }
+
+    // Cálculo de edad por fecha de nacimiento
+    function calculateAge(birthDateString) {
+      if (!birthDateString) return 0;
+      const today = new Date();
+      const birthDate = new Date(birthDateString);
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    }
+
+    // ==========================================
+    // INTEGRACIÓN CON API PRIVADA GOOGLE APPS SCRIPT
+    // ==========================================
+    const API_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzbpXRQ0JUosFe80ib-KWIaxDhp4iNpR7cUaSnD1Cv1xBqPpOi-vZIJnBDIP1Oh_PoFwA/exec';
+
+    // Cifrado SHA-256 nativo con crypto.subtle.digest
+    async function hashSHA256(str) {
+      const utf8 = new TextEncoder().encode(str);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    // Renderizador Dinámico del Pasaporte de Sellos (Black Club)
+    function renderLoyaltyStamps(count) {
+      const safeCount = Math.max(0, Math.min(10, parseInt(count, 10) || 0));
+      const countTextEl = document.getElementById('stampsCountText');
+      if (countTextEl) {
+        countTextEl.textContent = `${safeCount} / 10 SELLOS REGISTRADOS`;
+      }
+      const vipCardStamps = document.getElementById('vipCardStamps');
+      if (vipCardStamps) {
+        vipCardStamps.textContent = `${safeCount} ${safeCount === 1 ? 'SELLO VIP' : 'SELLOS VIP'}`;
+      }
+
+      const grid = document.getElementById('stampsGrid');
+      if (!grid) return;
+
+      let html = '';
+      for (let i = 1; i <= 10; i++) {
+        const isCompleted = i <= safeCount;
+        if (i === 5) {
+          if (isCompleted) {
+            html += `
+              <div class="aspect-square bg-gradient-to-br from-[#382800] via-vault-surface to-[#241A00] border-2 border-vault-gold flex flex-col items-center justify-center p-1 text-center relative shadow-[0_0_18px_rgba(212,175,55,0.45)]">
+                <span class="material-symbols-outlined text-vault-gold text-2xl">verified</span>
+                <span class="text-[9px] uppercase font-bold text-vault-goldLight leading-none mt-1">50% OFF</span>
+                <span class="text-[8px] text-vault-gold uppercase mt-0.5 font-semibold">Desbloqueado</span>
+              </div>`;
+          } else {
+            html += `
+              <div class="aspect-square bg-gradient-to-br from-[#241A00] to-vault-surface border-2 border-vault-goldLight flex flex-col items-center justify-center p-1 text-center relative shadow-[0_0_18px_rgba(212,175,55,0.3)] opacity-85">
+                <span class="material-symbols-outlined text-vault-goldLight text-2xl animate-pulse">savings</span>
+                <span class="text-[9px] uppercase font-bold text-vault-goldLight leading-none mt-1">50% OFF</span>
+                <span class="text-[8px] text-[#ffe088] uppercase mt-0.5">5ª Compra</span>
+              </div>`;
+          }
+        } else if (i === 10) {
+          if (isCompleted) {
+            html += `
+              <div class="aspect-square bg-gradient-to-tr from-[#503E00] via-vault-surface to-[#3C2F00] border-2 border-vault-gold flex flex-col items-center justify-center p-1 text-center relative shadow-[0_0_24px_rgba(212,175,55,0.6)]">
+                <span class="material-symbols-outlined text-vault-gold text-2xl">verified</span>
+                <span class="text-[9px] uppercase font-bold text-vault-goldLight leading-none mt-1">VAPE GRATIS</span>
+                <span class="text-[8px] text-vault-gold uppercase mt-0.5 font-semibold">Completado</span>
+              </div>`;
+          } else {
+            html += `
+              <div class="aspect-square bg-gradient-to-tr from-[#3C2F00] to-vault-surface border-2 border-vault-gold flex flex-col items-center justify-center p-1 text-center relative shadow-[0_0_20px_rgba(212,175,55,0.25)] opacity-85">
+                <span class="material-symbols-outlined text-vault-gold text-2xl">card_giftcard</span>
+                <span class="text-[9px] uppercase font-bold text-vault-goldLight leading-none mt-1">VAPE GRATIS</span>
+                <span class="text-[8px] text-[#ffe088] uppercase mt-0.5">10ª Compra</span>
+              </div>`;
+          }
+        } else {
+          if (isCompleted) {
+            html += `
+              <div class="aspect-square bg-vault-elevated border-2 border-vault-gold flex flex-col items-center justify-center p-1 text-center relative shadow-[inset_0_0_12px_rgba(212,175,55,0.35)]">
+                <span class="material-symbols-outlined text-vault-gold text-2xl">verified</span>
+                <span class="text-[9px] uppercase tracking-wider text-vault-gold mt-1 font-bold">Sello ${i}</span>
+              </div>`;
+          } else {
+            html += `
+              <div class="aspect-square bg-[#0E0E0E] border border-vault-border/60 flex flex-col items-center justify-center p-1 text-center opacity-60">
+                <span class="text-xs text-vault-textMuted font-bold">${i < 10 ? '0' + i : i}</span>
+                <span class="text-[8px] text-vault-textMuted uppercase mt-0.5">Pendiente</span>
+              </div>`;
+          }
+        }
+      }
+      grid.innerHTML = html;
+
+      // Gestión de Recompensas por Sellos VIP (5 y 10 Sellos)
+      const rewardContainer = document.getElementById('vipRewardContainer');
+      if (rewardContainer) {
+        if (safeCount === 5) {
+          rewardContainer.className = 'block mt-4 w-full max-w-sm';
+          rewardContainer.innerHTML = `
+            <button type="button" onclick="claimLoyaltyReward(5)" class="w-full py-3 px-4 bg-gradient-to-r from-vault-gold via-vault-goldLight to-vault-goldBronze text-vault-black font-montserrat font-extrabold text-xs uppercase tracking-widest hover:brightness-110 shadow-[0_0_20px_rgba(212,175,55,0.45)] transition-all cursor-pointer flex items-center justify-center gap-2">
+              <span>🎁 RECLAMAR RECOMPENSA</span>
+            </button>`;
+        } else if (safeCount >= 6 && safeCount <= 9) {
+          rewardContainer.className = 'block mt-4 w-full max-w-sm';
+          rewardContainer.innerHTML = `
+            <div class="w-full py-2.5 px-3 bg-[#141414] border border-vault-gold/40 text-vault-gold text-xs uppercase tracking-wider font-semibold text-center flex items-center justify-center gap-1.5 shadow-sm">
+              <span class="material-symbols-outlined text-sm">check_circle</span>
+              <span>✓ Recompensa reclamada</span>
+            </div>`;
+        } else if (safeCount === 10) {
+          rewardContainer.className = 'block mt-4 w-full max-w-sm';
+          rewardContainer.innerHTML = `
+            <button type="button" onclick="claimLoyaltyReward(10)" class="w-full py-3.5 px-4 bg-gradient-to-r from-vault-gold via-amber-300 to-vault-goldBronze text-vault-black font-montserrat font-black text-xs uppercase tracking-widest hover:brightness-110 shadow-[0_0_25px_rgba(212,175,55,0.6)] animate-pulse transition-all cursor-pointer flex items-center justify-center gap-2">
+              <span>🎉 RECLAMAR VAPE GRATIS</span>
+            </button>`;
+        } else {
+          rewardContainer.className = 'hidden mt-4 w-full max-w-sm';
+          rewardContainer.innerHTML = '';
+        }
+      }
+    }
+
+    // Apertura de WhatsApp para reclamo oficial de recompensas VIP
+    function claimLoyaltyReward(tier) {
+      const user = getCurrentUser();
+      const userEmail = (user && user.email) ? user.email : 'usuario@blackvault.com';
+      let message = '';
+      if (tier === 5) {
+        message = `Hola Black Vault, alcumulo 5 compras y deseo solicitar mi 50% OFF en mi próxima compra. Mi correo registrado es: ${userEmail}.`;
+      } else if (tier === 10) {
+        message = `Hola Black Vault, completé 10 compras y deseo coordinar la entrega de mi VAPE GRATIS. Mi correo registrado es: ${userEmail}.`;
+      }
+      if (message) {
+        openBVWhatsApp(message);
+      }
+    }
+
+    // Consulta ligera de sincronización de sellos desde Google Apps Script
+    async function syncUserStamps() {
+      const user = getCurrentUser();
+      if (!user || !user.email) return;
+
+      try {
+        const res = await fetch(API_APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            action: 'get_stamps',
+            correo: user.email
+          })
+        });
+        const data = await res.json();
+        if (data && data.status === 'success' && typeof data.sellos === 'number') {
+          user.sellos = data.sellos;
+          saveUserSession(user);
+          renderLoyaltyStamps(user.sellos);
+        }
+      } catch (err) {
+        console.warn('[Black Vault] Sincronización en segundo plano de sellos no disponible:', err);
+      }
+    }
+
+    // Flujo de Inicio de Sesión (Login) conectado a Apps Script API
+    async function handleLoginSubmit(event) {
+      event.preventDefault();
+      const emailInput = document.getElementById('loginEmail');
+      const passwordInput = document.getElementById('loginPassword');
+      const email = emailInput ? emailInput.value.trim() : '';
+      const password = passwordInput ? passwordInput.value : '';
+
+      const errorEl = document.getElementById('loginError');
+      const errorText = document.getElementById('loginErrorText');
+      const submitBtn = document.getElementById('loginSubmitBtn');
+
+      function showLoginError(msg) {
+        if (errorEl && errorText) {
+          errorText.textContent = msg;
+          errorEl.classList.remove('hidden');
+        }
+      }
+
+      if (errorEl) errorEl.classList.add('hidden');
+
+      if (!isValidEmail(email)) {
+        showLoginError('Por favor ingresa un correo electrónico con formato válido.');
+        return;
+      }
+
+      if (!password) {
+        showLoginError('Por favor ingresa tu contraseña de acceso.');
+        return;
+      }
+
+      // Estado de carga en botón
+      const originalBtnContent = submitBtn ? submitBtn.innerHTML : 'Ingresar';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <span class="inline-flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-base animate-spin">progress_activity</span>
+            <span>ACCEDIENDO AL VAULT...</span>
+          </span>`;
+      }
+
+      try {
+        const passwordHash = await hashSHA256(password);
+        const res = await fetch(API_APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            action: 'login',
+            correo: email,
+            password_hash: passwordHash
+          })
+        });
+
+        const data = await res.json();
+
+        
+   if (data && data.status === 'success' && data.user) {
+          const userData = {
+            id: data.user.id,
+            name: data.user.nombre,
+            city: data.user.ciudad || 'Cuenca',
+            email: data.user.correo,
+            sellos: typeof data.user.sellos === 'number' ? data.user.sellos : 0
+          };
+          saveUserSession(userData);
+
+          // Activar inmediatamente el overlay de inicio de sesión segura
+          const loginOverlay = document.getElementById('loginOverlay');
+          if (loginOverlay) {
+            loginOverlay.classList.remove('hidden');
+            loginOverlay.classList.add('flex');
+          }
+
+          // Transición suave de 900ms idéntica al cierre de sesión
+          setTimeout(() => {
+            // LISTA DE CORREOS DE ADMINISTRADORES
+            const adminEmails = [
+              "munozdanny2005@gmail.com",    // Pon aquí tu correo real
+              "pablojimbo98@icloud.com"        // Pon aquí el correo de tu socio
+            ];
+
+            if (adminEmails.map(e => e.toLowerCase()).includes(userData.email.toLowerCase())) {
+              window.location.href = "admin.html";
+              return;
+            }
+
+            if (loginOverlay) {
+              loginOverlay.classList.add('hidden');
+              loginOverlay.classList.remove('flex');
+            }
+            renderLoyaltyStamps(userData.sellos);
+            closeAuthModal();
+          }, 900);
+        } else {
+          showLoginError((data && data.message) ? data.message : 'Correo o contraseña incorrectos.');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
+          }
+        }
+      } catch (err) {
+        console.error('Error en login:', err);
+        showLoginError('No se pudo conectar con el servidor seguro. Revisa tu conexión.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnContent;
+        }
+      }
+    }
+
+    // Flujo de Registro (Sign Up) conectado a Apps Script API
+    async function handleSignupSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('signupName').value.trim();
+      const birthdate = document.getElementById('signupBirthdate').value;
+      const city = document.getElementById('signupCity').value;
+      const email = document.getElementById('signupEmail').value.trim();
+      const phone = document.getElementById('signupPhone').value.trim();
+      const pass = document.getElementById('signupPassword').value;
+      const passConf = document.getElementById('signupPasswordConfirm').value;
+      const terms = document.getElementById('signupTerms').checked;
+
+      const errorEl = document.getElementById('signupError');
+      const errorText = document.getElementById('signupErrorText');
+      const submitBtn = document.getElementById('signupSubmitBtn');
+
+      function showSignupError(msg) {
+        if (errorEl && errorText) {
+          errorText.textContent = msg;
+          errorEl.classList.remove('hidden');
+        }
+      }
+
+      if (errorEl) errorEl.classList.add('hidden');
+
+      // 1. Validación estricta de correo
+      if (!isValidEmail(email)) {
+        showSignupError('Por favor ingresa un correo electrónico con formato válido (ej. usuario@dominio.com).');
+        return;
+      }
+
+      // 2. Validación de fecha de nacimiento (+18)
+      if (!birthdate) {
+        showSignupError('Por favor selecciona tu fecha de nacimiento.');
+        return;
+      }
+      const age = calculateAge(birthdate);
+      if (age < 18) {
+        showSignupError('Debes tener al menos 18 años cumplidos para registrar tu membresía.');
+        return;
+      }
+
+      // 3. Validación de contraseñas: debe ser FUERTE
+      const pwStrength = getPasswordStrength(pass);
+      if (pwStrength < 3) {
+        showSignupError('La contraseña debe ser FUERTE: mínimo 8 caracteres, una mayúscula, un número y un símbolo.');
+        return;
+      }
+
+      if (pass !== passConf) {
+        showSignupError('Las contraseñas no coinciden. Por favor verifícalas.');
+        return;
+      }
+
+      if (!terms) {
+        showSignupError('Debes confirmar que eres mayor de 18 años y aceptar los términos.');
+        return;
+      }
+
+      // Estado de carga en botón
+      const originalBtnContent = submitBtn ? submitBtn.innerHTML : 'Crear Cuenta VIP';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <span class="inline-flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-base animate-spin">progress_activity</span>
+            <span>CREANDO MEMBRESÍA VIP...</span>
+          </span>`;
+      }
+
+      try {
+        const passwordHash = await hashSHA256(pass);
+        const res = await fetch(API_APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            action: 'register',
+            nombre: name,
+            fecha_nacimiento: birthdate,
+            ciudad: city,
+            correo: email,
+            celular: phone,
+            password_hash: passwordHash
+          })
+        });
+
+        const data = await res.json();
+if (data && data.status === 'success') {
+          // Guardar temporalmente los datos del usuario en memoria
+          window._pendingUserData = {
+            id: data.user ? data.user.id : undefined,
+            name: (data.user && data.user.nombre) ? data.user.nombre : name,
+            city: (data.user && data.user.ciudad) ? data.user.ciudad : city,
+            email: (data.user && data.user.correo) ? data.user.correo : email,
+            phone: phone,
+            birthdate: birthdate,
+            sellos: 0
+          };
+
+          // Abrir la pantalla de validación del código recibido por correo
+          mostrarVistaOtp(email);
+        } else {
+          showSignupError((data && data.message) ? data.message : 'Error al registrar la membresía. Intenta nuevamente.');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
+          }
+        }
+      } catch (err) {
+        console.error('Error en register:', err);
+        showSignupError('No se pudo conectar con el servidor seguro. Revisa tu conexión.');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnContent;
+        }
+      }
+    }
+
+    function saveUserSession(userData) {
+      try {
+        localStorage.setItem('blackVaultUser', JSON.stringify(userData));
+      } catch (e) {}
+      updateAuthUI();
+    }
+
+    function getCurrentUser() {
+      try {
+        const raw = localStorage.getItem('blackVaultUser');
+        return raw ? JSON.parse(raw) : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    // Gestión de Sesión: Dropdown en Navbar y Cambio/Cierre de Cuenta
+    function handleHeaderAuthClick() {
+      const user = getCurrentUser();
+      if (user && user.name) {
+        const menu = document.getElementById('userDropdownMenu');
+        if (menu) menu.classList.toggle('hidden');
+      } else {
+        openAuthModal('login');
+      }
+    }
+
+    function changeAccount() {
+      const menu = document.getElementById('userDropdownMenu');
+      if (menu) menu.classList.add('hidden');
+      openAuthModal('login');
+    }
+
+// Cierre de sesión con spinner elegante
+    function logoutUser() {
+      const menu = document.getElementById('userDropdownMenu');
+      if (menu) menu.classList.add('hidden');
+
+      const overlay = document.getElementById('logoutOverlay');
+      if (overlay) {
+        overlay.classList.remove('hidden');
+        overlay.classList.add('flex');
+      }
+
+      setTimeout(() => {
+        try {
+          localStorage.removeItem('blackVaultUser');
+        } catch (e) {}
+        updateAuthUI();
+        renderLoyaltyStamps(0);
+        window.location.reload();
+      }, 900);
+    }
+
+    // ==========================================
+    // LÓGICA DE VERIFICACIÓN DE CÓDIGO OTP POR CORREO
+    // ==========================================
+    let otpTimerInterval = null;
+    let otpResendInterval = null;
+    let otpSecondsLeft = 900; // 15 minutos de validez
+    let otpCurrentEmail = '';
+
+    function mostrarVistaOtp(email) {
+      otpCurrentEmail = email;
+      const emailEl = document.getElementById('otpEmailTarget');
+      if (emailEl) emailEl.textContent = email;
+
+      if (authLoginView) authLoginView.classList.add('hidden');
+      if (authSignupView) authSignupView.classList.add('hidden');
+      const otpView = document.getElementById('authOtpView');
+      if (otpView) {
+        otpView.classList.remove('hidden');
+        otpView.classList.add('flex');
+      }
+
+      // Iniciar cuenta regresiva de 15 minutos
+      otpSecondsLeft = 900;
+      clearInterval(otpTimerInterval);
+      const countdownEl = document.getElementById('otpCountdown');
+
+      otpTimerInterval = setInterval(() => {
+        otpSecondsLeft--;
+        const m = Math.floor(otpSecondsLeft / 60).toString().padStart(2, '0');
+        const s = (otpSecondsLeft % 60).toString().padStart(2, '0');
+        if (countdownEl) countdownEl.textContent = `${m}:${s}`;
+
+        if (otpSecondsLeft <= 0) {
+          clearInterval(otpTimerInterval);
+          const btn = document.getElementById('otpConfirmBtn');
+          if (btn) btn.disabled = true;
+          alert('El código ha caducado. Por favor solicita uno nuevo con el botón Reenviar.');
+        }
+      }, 1000);
+
+      iniciarContadorReenvio();
+    }
+
+    function iniciarContadorReenvio() {
+      const btn = document.getElementById('otpResendBtn');
+      const spanSecs = document.getElementById('otpResendSecs');
+      if (!btn) return;
+
+      btn.disabled = true;
+      let secs = 60;
+      if (spanSecs) spanSecs.textContent = secs;
+
+      clearInterval(otpResendInterval);
+      otpResendInterval = setInterval(() => {
+        secs--;
+        if (spanSecs) spanSecs.textContent = secs;
+        if (secs <= 0) {
+          clearInterval(otpResendInterval);
+          btn.disabled = false;
+          btn.textContent = 'Reenviar código ahora';
+        }
+      }, 1000);
+    }
+
+    async function submitOtpVerification() {
+      const codeInput = document.getElementById('otpCodeInput');
+      const code = codeInput ? codeInput.value.trim() : '';
+      const errBox = document.getElementById('otpError');
+      const errText = document.getElementById('otpErrorText');
+      const btn = document.getElementById('otpConfirmBtn');
+
+      if (code.length !== 6) {
+        if (errBox && errText) {
+          errText.textContent = 'Ingresa el código completo de 6 dígitos.';
+          errBox.classList.remove('hidden');
+        }
+        return;
+      }
+
+      if (errBox) errBox.classList.add('hidden');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'VERIFICANDO CÓDIGO...';
+      }
+
+      try {
+        const res = await fetch(API_APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            action: 'verify_otp',
+            correo: otpCurrentEmail,
+            codigo: code
+          })
+        });
+
+        const data = await res.json();
+        if (data && data.status === 'success') {
+          clearInterval(otpTimerInterval);
+
+          // 1. Guardar la sesión oficial en localStorage
+          if (window._pendingUserData) {
+            saveUserSession(window._pendingUserData);
+            renderLoyaltyStamps(0);
+          }
+
+          // 2. Ocultar la pantalla de código
+          const otpView = document.getElementById('authOtpView');
+          if (otpView) {
+            otpView.classList.add('hidden');
+            otpView.classList.remove('flex');
+          }
+
+          // 3. Mostrar la pantalla de bienvenida con el mensaje personalizado que pediste
+          const successView = document.getElementById('authSuccessView');
+          const successMsg = document.getElementById('authSuccessMsg');
+          if (successMsg && window._pendingUserData) {
+            successMsg.textContent = `Tu cuenta está activa, eres parte de la familia Black Vault. Bienvenido, ${window._pendingUserData.name}.`;
+          }
+          if (successView) {
+            successView.classList.remove('hidden');
+            successView.classList.add('flex');
+          }
+
+        } else {
+          if (errBox && errText) {
+            errText.textContent = (data && data.message) ? data.message : 'Código incorrecto o expirado.';
+            errBox.classList.remove('hidden');
+          }
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = 'Validar y Activar Membresía';
+          }
+        }
+      } catch (e) {
+        if (errBox && errText) {
+          errText.textContent = 'Error al conectar con el servidor.';
+          errBox.classList.remove('hidden');
+        }
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = 'Validar y Activar Membresía';
+        }
+      }
+    }
+
+    async function resendOtpCode() {
+      const btn = document.getElementById('otpResendBtn');
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+      }
+
+      try {
+        const res = await fetch(API_APPS_SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            action: 'resend_otp',
+            correo: otpCurrentEmail
+          })
+        });
+
+        const data = await res.json();
+        if (data && data.status === 'success') {
+          alert('Nuevo código enviado. Por favor revisa tu bandeja de entrada o Spam.');
+          otpSecondsLeft = 900;
+          const confirmBtn = document.getElementById('otpConfirmBtn');
+          if (confirmBtn) confirmBtn.disabled = false;
+          iniciarContadorReenvio();
+        } else {
+          alert((data && data.message) ? data.message : 'No se pudo reenviar el código.');
+          if (btn) btn.disabled = false;
+        }
+      } catch (e) {
+        alert('Error de conexión al reenviar el código.');
+        if (btn) btn.disabled = false;
+      }
+    }
+
+    // ==========================================
+    // VINCULACIÓN DINÁMICA CON HEADER & BLACK CLUB
+    // ==========================================
+    function updateAuthUI() {
+      const user = getCurrentUser();
+      const headerAuthText = document.getElementById('headerAuthText');
+      const headerAuthBtn = document.getElementById('headerAuthBtn');
+      const headerAuthIcon = document.getElementById('headerAuthIcon');
+      const headerAuthArrow = document.getElementById('headerAuthArrow');
+      const dropdownUserName = document.getElementById('dropdownUserName');
+      const dropdownUserCity = document.getElementById('dropdownUserCity');
+
+      const mobileAuthLoggedOut = document.getElementById('mobileAuthLoggedOut');
+      const mobileAuthLoggedIn = document.getElementById('mobileAuthLoggedIn');
+      const mobileUserName = document.getElementById('mobileUserName');
+
+      const cardHolder = document.getElementById('vipCardHolder');
+      const cardCity = document.getElementById('vipCardCity');
+      const cardId = document.getElementById('vipCardId');
+      const vipCardStamps = document.getElementById('vipCardStamps');
+      const vipPromptAction = document.getElementById('vipPromptAction');
+      const vipUserActiveBadge = document.getElementById('vipUserActiveBadge');
+
+      if (user && user.name) {
+        const firstName = user.name.split(' ')[0].toUpperCase();
+        if (headerAuthText) headerAuthText.textContent = firstName;
+        if (headerAuthIcon) headerAuthIcon.textContent = 'stars';
+        if (headerAuthArrow) headerAuthArrow.classList.remove('hidden');
+        if (headerAuthBtn) {
+          headerAuthBtn.classList.add('border-vault-gold', 'text-vault-gold', 'bg-vault-gold/10');
+          headerAuthBtn.title = `Sesión activa: ${user.name} (${user.city || 'Cuenca'})`;
+        }
+
+        if (dropdownUserName) dropdownUserName.textContent = user.name;
+        if (dropdownUserCity) dropdownUserCity.textContent = (user.city || 'Cuenca') + ' • Ecuador';
+
+        if (mobileAuthLoggedOut) mobileAuthLoggedOut.classList.add('hidden');
+        if (mobileAuthLoggedIn) mobileAuthLoggedIn.classList.remove('hidden');
+        if (mobileUserName) mobileUserName.textContent = `${user.name} (${user.city || 'Cuenca'})`;
+
+        if (cardHolder) cardHolder.textContent = user.name.toUpperCase();
+        const cityUpper = (user.city || 'Cuenca').toUpperCase();
+        if (cardCity) cardCity.textContent = `${cityUpper} PRIVATE MEMBER`;
+
+        const userStamps = typeof user.sellos === 'number' ? user.sellos : 0;
+        if (vipCardStamps) vipCardStamps.textContent = `${userStamps} ${userStamps === 1 ? 'SELLO VIP' : 'SELLOS VIP'}`;
+
+        const initials = user.name.split(' ').map(w => w[0]).join('').toUpperCase().substring(0, 3) || 'VIP';
+        const hashNum = Math.abs(user.name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 1000)) % 9000 + 1000;
+        if (cardId) cardId.textContent = `ID • #BV-${initials}-${hashNum}-EC`;
+
+        if (vipPromptAction) vipPromptAction.classList.add('hidden');
+        if (vipUserActiveBadge) {
+          vipUserActiveBadge.classList.remove('hidden');
+          vipUserActiveBadge.textContent = `✓ Pase VIP Digital Activo para ${user.name} (${user.city || 'Cuenca'})`;
+        }
+
+        renderLoyaltyStamps(userStamps);
+      } else {
+        if (headerAuthText) headerAuthText.textContent = 'Iniciar Sesión';
+        if (headerAuthIcon) headerAuthIcon.textContent = 'person';
+        if (headerAuthArrow) headerAuthArrow.classList.add('hidden');
+        if (headerAuthBtn) {
+          headerAuthBtn.classList.remove('border-vault-gold', 'text-vault-gold', 'bg-vault-gold/10');
+          headerAuthBtn.title = 'Iniciar sesión o registrarse';
+        }
+
+        if (mobileAuthLoggedOut) mobileAuthLoggedOut.classList.remove('hidden');
+        if (mobileAuthLoggedIn) mobileAuthLoggedIn.classList.add('hidden');
+
+        if (cardHolder) cardHolder.textContent = 'BLACK VAULT VIP ELITE';
+        if (cardCity) cardCity.textContent = 'CUENCA PRIVATE MEMBER';
+        if (cardId) cardId.textContent = 'ID • #BV-8924-EC';
+        if (vipCardStamps) vipCardStamps.textContent = '0 SELLOS VIP';
+
+        if (vipPromptAction) vipPromptAction.classList.remove('hidden');
+        if (vipUserActiveBadge) vipUserActiveBadge.classList.add('hidden');
+
+        renderLoyaltyStamps(0);
+      }
+    }
+
+    // Cerrar dropdown al hacer clic fuera
+    document.addEventListener('click', function(e) {
+      const container = document.getElementById('headerAuthContainer');
+      const menu = document.getElementById('userDropdownMenu');
+      if (container && menu && !container.contains(e.target)) {
+        menu.classList.add('hidden');
+      }
+    });
+
+    // Inicialización y eventos DOM
+    window.addEventListener('DOMContentLoaded', function() {
+      const currentHash = window.location.hash.replace('#', '');
+      if (currentHash) {
+        switchTab(currentHash);
+      }
+      updateAuthUI();
+
+      // Sincronización ligera de sellos desde Google Apps Script si hay sesión activa
+      syncUserStamps();
+      // Cargar catálogo dinámico desde Google Sheets
+      fetchCatalogFromGoogleSheets();
+
+      // Control estricto de cierre de modales al hacer clic fuera (previene cierre accidental por selección o arrastre de texto)
+      function setupSafeBackdropClose(modalElement, closeFn) {
+        if (!modalElement || typeof closeFn !== 'function') return;
+
+        let mouseDownOnBackdrop = false;
+
+        modalElement.addEventListener('mousedown', function(e) {
+          // Solo es true si el mousedown comenzó DIRECTAMENTE sobre el contenedor overlay/fondo
+          mouseDownOnBackdrop = (e.target === modalElement);
+        });
+
+        modalElement.addEventListener('mouseup', function(e) {
+          // Solo cierra el modal si TANTO mousedown como mouseup se originaron en el overlay
+          if (mouseDownOnBackdrop && e.target === modalElement) {
+            closeFn();
+          }
+          mouseDownOnBackdrop = false;
+        });
+
+        // Cancelar si el puntero abandona el contenedor o se cancela el arrastre
+        modalElement.addEventListener('mouseleave', function() {
+          mouseDownOnBackdrop = false;
+        });
+      }
+
+      setupSafeBackdropClose(authModal, closeAuthModal);
+      setupSafeBackdropClose(document.getElementById('orderModal'), closeOrderModal);
+      setupSafeBackdropClose(document.getElementById('deliveryConditionsModal'), closeDeliveryConditionsModal);
+
+      // Limitar fecha máxima de nacimiento a hoy - 18 años
+      const birthInput = document.getElementById('signupBirthdate');
+      if (birthInput) {
+        const today = new Date();
+        const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+        birthInput.max = maxDate.toISOString().split('T')[0];
+      }
+
+      // Inicializar validación dual de botón "CREAR CUENTA VIP" (deshabilitado al cargar)
+      updateSignupSubmitState();
+
+      // Escape key closes modals
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          const dModal = document.getElementById('deliveryConditionsModal');
+          if (dModal && !dModal.classList.contains('hidden')) {
+            closeDeliveryConditionsModal();
+            return;
+          }
+          const oModal = document.getElementById('orderModal');
+          if (oModal && !oModal.classList.contains('hidden')) {
+            closeOrderModal();
+            return;
+          }
+          if (authModal && !authModal.classList.contains('hidden')) {
+            closeAuthModal();
+          }
+        }
+      });
+    });
+
+    // Si el usuario cambia de pestaña a Catálogo, refrescar suavemente si no se ha cargado
+    const originalSwitchTab = switchTab;
+    switchTab = function(viewId) {
+      originalSwitchTab(viewId);
+      if (viewId === 'catalogo-vapes' && dynamicVapeList.length === 0) {
+        fetchCatalogFromGoogleSheets();
+      }
+    };
+
+    // Soporte para botones atrás/adelante del navegador
+    window.addEventListener('hashchange', function() {
+      const currentHash = window.location.hash.replace('#', '');
+      if (currentHash) {
+        switchTab(currentHash);
+      }
+    });
+  </script>
+</body>
+</html>
